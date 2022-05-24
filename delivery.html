@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <title>Document</title>
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="header_top">
+            <div class="header_top_left">
+                <div class="header_top_left_logo">
+                    <img src="assets/img/logo/logo.png" alt="">
+                </div>
+                <div class="header_top_left_search">
+                    <input type="text" placeholder="Meklēt preci">
+                    <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <title>C5A1A923-6AF9-4A12-BF3D-A06B03F74DF2</title>
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Homepage" transform="translate(-641.000000, -37.000000)" fill="#A8B1B9" fill-rule="nonzero">
+                                <g id="Header" transform="translate(-1.000000, 0.000000)">
+                                    <g id="1-row" transform="translate(1.000000, 0.000000)">
+                                        <g id="Search-field" transform="translate(377.000000, 20.000000)">
+                                            <g id="Icon" transform="translate(264.000000, 17.000000)">
+                                                <path d="M7.5,0 C11.6421356,0 15,3.35786438 15,7.5 C15,9.21060437 14.4273178,10.7874516 13.4632192,12.0492761 L15.7071068,14.2928932 C16.0976311,14.6834175 16.0976311,15.3165825 15.7071068,15.7071068 C15.3466228,16.0675907 14.7793918,16.0953203 14.3871006,15.7902954 L14.2928932,15.7071068 L12.0492761,13.4632192 C10.7874516,14.4273178 9.21060437,15 7.5,15 C3.35786438,15 0,11.6421356 0,7.5 C0,3.35786438 3.35786438,0 7.5,0 Z M7.5,2 C4.46243388,2 2,4.46243388 2,7.5 C2,10.5375661 4.46243388,13 7.5,13 C10.5375661,13 13,10.5375661 13,7.5 C13,4.46243388 10.5375661,2 7.5,2 Z" id="ic-search"></path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="header_top_right">
+                <div class="header_top_right_wrapper">
+                    <svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <title>FFDFD993-CF17-4F39-B9FF-A0F52D9234E5</title>
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Homepage" transform="translate(-995.000000, -34.000000)">
+                                <g id="Header" transform="translate(-1.000000, 0.000000)">
+                                    <g id="1-row" transform="translate(1.000000, 0.000000)">
+                                        <g id="Right-side" transform="translate(995.000000, 25.000000)">
+                                            <g id="ic-call" transform="translate(0.000000, 9.000000)">
+                                                <rect id="icon-space" x="3.81173436e-06" y="7.43525133e-05" width="22" height="22"></rect>
+                                                <path d="M11,0 C17.0751322,0 22,4.92486775 22,11 C22,17.0751322 17.0751322,22 11,22 C4.92486775,22 0,17.0751322 0,11 C0,4.92486775 4.92486775,0 11,0 Z M13.9787785,12.0004346 L8.02122154,12.0004346 C8.05631102,12.8250092 8.13375654,13.6141869 8.24487886,14.3535807 L8.3343994,14.8985667 C8.87592707,17.9313779 9.98654982,20 11,20 C12.0134502,20 13.1240729,17.9313779 13.6656006,14.8985667 L13.7551211,14.3535807 C13.8662435,13.6141869 13.943689,12.8250092 13.9787785,12.0004346 Z M6.01847249,12.0006406 L2.05500569,12.0006406 C2.42574803,15.3521027 4.6367105,18.1487926 7.65500314,19.3578752 C6.76157224,17.6341787 6.18978295,15.1994627 6.03958477,12.4599743 L6.01847249,12.0006406 Z M19.9449943,12.0006406 L15.9815275,12.0006406 C15.8727565,14.9267442 15.2880628,17.5384178 14.3451588,19.358304 C17.271831,18.1854444 19.439513,15.5201416 19.9062497,12.303812 L19.9449943,12.0006406 Z M7.65484124,2.64169598 L7.49679384,2.70726461 C4.55935236,3.94969759 2.41880673,6.70728988 2.05489527,10.0003618 L6.01843525,10.0003618 C6.12139028,7.22787902 6.65159878,4.73761501 7.50893932,2.93559109 L7.65484124,2.64169598 Z M11,2 L10.909991,2.00538207 C10.1738657,2.09296844 9.39726511,3.24388909 8.83165743,5.04129986 L8.69479672,5.50387987 C8.51856476,6.137968 8.36810486,6.84002869 8.25273066,7.59462328 L8.17292411,8.1701781 C8.09998718,8.75510056 8.04809568,9.36740228 8.02117881,10.0005701 L13.9788212,10.0005701 C13.7903863,5.56799982 12.3779761,2.15804928 11.0896639,2.00534108 L11,2 Z M14.3449969,2.64212484 L14.3819675,2.71350051 C15.3033808,4.53015515 15.874311,7.11211962 15.9815647,10.0003618 L19.9451047,10.0003618 C19.5746912,6.64845291 17.3635893,3.85132753 14.3449969,2.64212484 Z" id="Shape" fill="#A1AAB3" fill-rule="nonzero"></path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    <div class="header_top_right_wrapper_data">
+                        <div class="header_top_right_wrapper_data_title">Valoda</div>
+                        <a href="" class="header_top_right_wrapper_data_descr">LV</a>
+                    </div>
+                </div>
+                <div class="header_top_right_wrapper">
+                    <svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <title>1F2A9BBF-740F-40DD-B78D-69957C1141C0</title>
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Homepage" transform="translate(-1099.000000, -34.000000)">
+                                <g id="Header" transform="translate(-1.000000, 0.000000)">
+                                    <g id="1-row" transform="translate(1.000000, 0.000000)">
+                                        <g id="Right-side" transform="translate(995.000000, 25.000000)">
+                                            <g id="Contacts" transform="translate(104.000000, 0.000000)">
+                                                <g id="ic-call" transform="translate(0.000000, 9.000000)">
+                                                    <rect id="icon-space" x="3.81173436e-06" y="7.43525133e-05" width="22" height="22"></rect>
+                                                    <path d="M5.77589167,0.955539368 C7.23851295,0.941454641 8.48576637,2.01208523 8.69196242,3.46844357 C8.80330439,4.31103428 9.00979385,5.13835759 9.30664808,5.93237757 C9.70753361,6.99681126 9.45111707,8.19682185 8.64638104,9.00903675 L7.98555329,9.66860141 C9.09976086,11.403365 10.5769205,12.8773327 12.3154613,13.9890754 L12.9823836,13.3234399 C13.7914853,12.5248719 14.9916971,12.2693918 16.0541471,12.6680052 C16.8522833,12.9652619 17.6815634,13.1714492 18.5350836,13.2838456 C19.9959247,13.4895406 21.072292,14.7527928 21.0425219,16.225201 L21.0425137,19.0769391 C21.0458491,19.8971004 20.7026543,20.6805222 20.0974764,21.23467 C19.4927217,21.7884304 18.6823689,22.0619607 17.8473932,21.98648 C14.7458142,21.6501123 11.7664852,20.5922841 9.15655221,18.9029362 C6.71916336,17.3570783 4.65261829,15.2944832 3.10844685,12.8689802 C1.40465706,10.2439585 0.344325565,7.25519547 0.011855939,4.12921838 C-0.0618754005,3.31486949 0.210681697,2.5071734 0.76274492,1.90355657 C1.31437414,1.30041428 2.0942812,0.956544376 2.91317114,0.955539368 L5.77589167,0.955539368 Z M5.78561677,2.9555871 L2.91428586,2.9555871 C2.65693251,2.95591842 2.41171158,3.06403912 2.23857729,3.2533413 C2.06583866,3.44221087 1.98068283,3.69456178 2.00216968,3.93324744 C2.29981229,6.73072733 3.25351531,9.41893605 4.79080037,11.7874953 C6.18199792,13.9726504 8.03824074,15.8253452 10.2355113,17.2189641 C12.5909597,18.7435443 15.271947,19.6954445 18.045049,19.996353 C18.3020881,20.0195385 18.5569221,19.9335206 18.7468201,19.7596353 C18.9362949,19.5861374 19.043572,19.3412525 19.0425296,19.0810058 L19.0425296,16.2140505 L19.0385614,16.0751645 C18.9972223,15.663087 18.6788575,15.3238154 18.2651413,15.2655242 C17.2712503,15.1346906 16.2953699,14.8920534 15.3538576,14.5413949 C15.0189618,14.4157486 14.6413751,14.4961226 14.3912723,14.7429474 L13.1752703,15.9566251 C12.8571203,16.2741671 12.3661926,16.340408 11.9752602,16.1185426 C9.42165643,14.6692987 7.30721368,12.5588975 5.85506135,10.0099409 C5.63189962,9.61822614 5.69843397,9.12562386 6.01751897,8.80714875 L7.22957161,7.59743492 C7.48012888,7.34454215 7.56020965,6.96977005 7.43414002,6.63502095 C7.08352981,5.69722537 6.84033514,4.72283846 6.71045935,3.73966149 C6.64634844,3.28694328 6.25511631,2.95111331 5.78561677,2.9555871 Z M13.5791641,3.84111888 C15.8915969,4.29142248 17.7001063,6.09647517 18.1515011,8.40565887 C18.2574553,8.94768484 17.9039493,9.47297656 17.3619234,9.57893076 C16.8198974,9.68488496 16.2946057,9.33137895 16.1886515,8.78935298 C15.8935615,7.27977232 14.7105263,6.09899833 13.1968817,5.80424399 C12.6547797,5.69867962 12.300896,5.17364228 12.4064603,4.63154025 C12.5120247,4.08943822 13.037062,3.73555452 13.5791641,3.84111888 Z M13.3815749,0 L13.4982271,0.00616539194 C17.9641656,0.501346989 21.4918089,4.01781885 21.9937261,8.47607464 C22.0555129,9.02489232 21.6606963,9.51988499 21.1118786,9.58167172 C20.5630609,9.64345845 20.0680682,9.24864185 20.0062815,8.69982417 C19.6089806,5.17081782 16.8155637,2.38624717 13.2778186,1.99398331 C12.7288979,1.93311918 12.3332498,1.43879086 12.3941139,0.889870096 C12.4462832,0.419366586 12.8169159,0.0614715824 13.2674224,0.00714641125 L13.3815749,0 Z" id="icon" fill="#A1AAB3"></path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    <div class="header_top_right_wrapper_data">
+                        <a href="mailto:info@evi.lv" class="header_top_right_wrapper_data_title">info@evi.lv</a>
+                        <a href="tel:371 29 399 563" class="header_top_right_wrapper_data_descr">+371 29 399 563</a>
+                    </div>
+                </div>
+                <div class="header_top_right_wrapper">
+                    <svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <title>586155F5-6A28-422E-8FEF-E887C6E2762E</title>
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Homepage" transform="translate(-1271.000000, -34.000000)">
+                                <g id="Header" transform="translate(-1.000000, 0.000000)">
+                                    <g id="1-row" transform="translate(1.000000, 0.000000)">
+                                        <g id="Right-side" transform="translate(995.000000, 25.000000)">
+                                            <g id="Profile" transform="translate(276.000000, 0.000000)">
+                                                <g id="ic-user" transform="translate(0.000000, 9.000000)">
+                                                    <rect id="icon-space" x="0" y="0" width="22" height="22"></rect>
+                                                    <path d="M11,0 C8.23857625,0 6,2.23857625 6,5 C6,7.76142375 8.23857625,10 11,10 C13.7614237,10 16,7.76142375 16,5 C16,2.23857625 13.7614237,0 11,0 Z M11,2 C12.6568542,2 14,3.34314575 14,5 C14,6.65685425 12.6568542,8 11,8 C9.34314575,8 8,6.65685425 8,5 C8,3.34314575 9.34314575,2 11,2 Z M12.4368871,11.74137 C15.6726924,10.5849908 18.3544887,12.3590869 19.5292,15.9612973 L19.6069474,16.2097224 L20.9578263,20.7126521 C21.1165241,21.241645 20.8163407,21.7991284 20.2873479,21.9578263 C19.7961402,22.1051886 19.2803667,21.8568828 19.0821285,21.3971175 L19.0421737,21.2873479 L17.6913158,16.7844883 C16.8849535,14.0973284 15.3079267,12.9452241 13.2995473,13.5617096 L13.1100084,13.6246936 C12.4124576,13.8740351 11.7076661,14 11,14 C10.393429,14 9.78897004,13.9074544 9.18941619,13.7240086 L8.89006095,13.6247184 C6.85498614,12.897444 5.2407257,13.9460806 4.38654726,16.5370075 L4.30870519,16.7844182 L2.95782629,21.2873479 C2.79912843,21.8163407 2.24164496,22.1165241 1.71265211,21.9578263 C1.22144447,21.810464 0.927526598,21.3192508 1.01510688,20.8262881 L1.04217371,20.7126521 L2.39307366,16.2096523 C3.52389766,12.4412413 6.25376661,10.5587094 9.5631822,11.7413948 C10.0479068,11.914661 10.5253908,12 11,12 C11.4746092,12 11.9520932,11.914661 12.4368871,11.74137 Z" id="Shape" fill="#A1AAB3"></path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>                    <div class="header_top_right_wrapper_data">
+                        <div class="header_top_right_wrapper_data_title">Tavs profils</div>
+                        <a href="#" class="header_top_right_wrapper_data_descr">Autorizēties</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header_bottom">
+        <div class="header_bottom_container container">
+            <div class="header_bottom_container_left">
+               <div class="header_bottom_container_left_wrap">
+                   <button class="header_bottom_container_left_wrap_dropbtn">Produktu kategorijas</button>
+                   <div class="header_bottom_container_left_wrap_dropdown-content">
+                       <div class="header_bottom_container_left_wrap_dropdown-content-wrap">
+                           <a href="#">Ссылка 1</a>
+                           <div class="header_bottom_container_left_wrap_dropdown-content-wrap_submenu">
+                               <a href="">меню третьего уровня - 1</a>
+                               <a href="">меню третьего уровня - 1</a>
+                               <a href="">меню третьего уровня - 1</a>
+                           </div>
+                       </div>
+                       <div class="header_bottom_container_left_wrap_dropdown-content-wrap">
+                           <a href="#">Ссылка 2</a>
+                           <div class="header_bottom_container_left_wrap_dropdown-content-wrap_submenu">
+                               <a href="">меню третьего уровня - 2</a>
+                               <a href="">меню третьего уровня - 2</a>
+                               <a href="">меню третьего уровня - 2</a>
+                           </div>
+                       </div>
+                       <div class="header_bottom_container_left_wrap_dropdown-content-wrap">
+                           <a href="#">Ссылка 3</a>
+                           <div class="header_bottom_container_left_wrap_dropdown-content-wrap_submenu">
+                               <a href="">меню третьего уровня - 3</a>
+                               <a href="">меню третьего уровня - 3</a>
+                               <a href="">меню третьего уровня - 3</a>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+                <nav class="header_bottom_container_left_nav">
+                    <ul>
+                        <li><a href="#">Sākums</a></li>
+                        <li><a href="#">Jaunumi</a></li>
+                        <li><a href="#">Par mums</a></li>
+                        <li><a href="#">Noteikumi</a></li>
+                        <li><a href="#">Kontakti</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header_bottom_container_cart">
+                <svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <title>CD82F479-4FAF-4681-9692-7B28D3DD5D8D</title>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Homepage" transform="translate(-1281.000000, -109.000000)">
+                            <g id="Header" transform="translate(-1.000000, 0.000000)">
+                                <g id="2-row" transform="translate(0.000000, 90.000000)">
+                                    <g id="My-cart" transform="translate(1282.000000, 18.000000)">
+                                        <g id="ic-cart" transform="translate(0.000000, 1.000000)">
+                                            <rect id="icon-space" x="0" y="0" width="22" height="22"></rect>
+                                            <path d="M10,18 C11.1045695,18 12,18.8954305 12,20 C12,21.1045695 11.1045695,22 10,22 C8.8954305,22 8,21.1045695 8,20 C8,18.8954305 8.8954305,18 10,18 Z M16,18 C17.1045695,18 18,18.8954305 18,20 C18,21.1045695 17.1045695,22 16,22 C14.8954305,22 14,21.1045695 14,20 C14,18.8954305 14.8954305,18 16,18 Z M1,0 L4,0 C4.43224297,0 4.81064595,0.276787608 4.94681326,0.678060781 L4.97780241,0.790470911 L5.88133729,5.00696698 L5.94020469,5.00175823 L21,5 C21.5997637,5 22.0549227,5.52067883 21.9951229,6.10034708 L21.9761871,6.21693046 L20.324218,13.6507914 C20.0324549,14.9637252 18.9058923,15.91433 17.5779312,15.9945094 L17.3956568,16 L8.61683158,16 C7.26372316,16 6.08648524,15.095862 5.7272766,13.8067174 L5.68342434,13.6285873 L3.19158421,2 L1,2 C0.44771525,2 0,1.55228475 0,1 C0,0.487164161 0.38604019,0.0644928393 0.883378875,0.00672773133 L1,0 Z M19.7533839,7 L6.30841579,7 L7.63902917,13.2095291 C7.72959664,13.6321773 8.07952666,13.9441856 8.50042355,13.9932519 L8.61683158,14 L17.3956568,14 C17.8252972,14 18.2020966,13.7264627 18.3402285,13.3284527 L18.3718438,13.2169305 L19.7533839,7 Z" id="icon" fill="#5CC1DE"></path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+                <div class="header_bottom_container_cart_price">
+                    0.00
+                    <div class="header_bottom_container_cart_price_currency">
+                        EUR
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="main">
+    <div class="container">
+        <div class="title-xl">Piegāde un apmaksas veids</div>
+
+        <div class="delivery">
+            <div class="delivery-left">
+                <div class="form">
+                    <form action="#" class="form-content">
+                        <div class="delivery-left-group">
+                            <div class="title-s">Saņemšanas veids</div>
+                            <div class="delivery-left-group-radio">
+                                <input type="radio" id="inPlace" name="delivery" value="inPlace" checked>
+                                <label for="inPlace">
+                                    <svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <title>8CB5A5B7-BF3B-4CE8-BA92-81CE1E6CF123</title>
+                                        <g id="Dizains" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="08.02.-Checkout---Uz-vietas-birojā" transform="translate(-355.000000, -402.000000)" fill="#5CC1DE">
+                                                <g id="Content" transform="translate(215.000000, 200.000000)">
+                                                    <g id="Form" transform="translate(0.000000, 72.000000)">
+                                                        <g id="Content" transform="translate(50.000000, 40.000000)">
+                                                            <g id="Select-items" transform="translate(0.000000, 50.000000)">
+                                                                <g id="Icon" transform="translate(90.000000, 40.000000)">
+                                                                    <path d="M25.0001993,0 C25.2927583,0 25.5683803,0.127936807 25.7569622,0.346292382 L25.8322496,0.445299804 L29.8651998,6.49790161 L29.8651998,6.49790161 C29.9489816,6.64126545 29.9921246,6.79317528 30.0003986,6.94328792 L30.0003986,11.5 C30.0003986,12.8957896 29.1831512,14.1007474 28.0012368,14.6626913 L28.0001993,29 C28.0001993,29.5128358 27.6141591,29.9355072 27.1168204,29.9932723 L27.0001993,30 L3.0001993,30 C2.48736346,30 2.06469214,29.6139598 2.00692703,29.1166211 L2.0001993,29 L2.00016603,14.6631686 C0.876833083,14.1295168 0.0828627603,13.0151006 0.0062740604,11.7079391 L0,11.5 L0,6.94328792 C0.00372040439,6.87578996 0.0144907455,6.80792864 0.0328268415,6.74066778 L0.0708130617,6.62873554 L0.0708130617,6.62873554 L0.120146761,6.52471855 L0.168740165,6.4442256 L0.168740165,6.4442256 L4.168149,0.445299804 C4.33043156,0.201875969 4.58976899,0.0435111828 4.8760582,0.00772348368 L5.0001993,0 L25.0001993,0 Z M18.0001423,13.6457598 L17.8936662,13.7618659 C17.1652788,14.5247394 16.1382406,15 15.0001993,15 C13.8054758,15 12.7330882,14.476218 12.0001423,13.6457598 C11.2673104,14.476218 10.1949228,15 9.0001993,15 C7.87940105,15 6.86626762,14.5390321 6.14004598,13.7963433 C5.60369304,14.4147234 4.85178452,14.8425075 4.00114921,14.9644196 L4.0001993,28 L10,28 L10.0001993,19 C10.0001993,18.4871642 10.3862395,18.0644928 10.8835782,18.0067277 L11.0001993,18 L19.0001993,18 C19.5130351,18 19.9357065,18.3860402 19.9934716,18.8833789 L20.0001993,19 L20,28 L26.000249,28 L26.000249,14.9645627 C25.1492032,14.8428426 24.3969164,14.4149657 23.8585342,13.7960776 C23.134131,14.5390321 22.1209976,15 21.0001993,15 C19.8054758,15 18.7330882,14.476218 18.0001423,13.6457598 Z M18.0001993,20 L12.0001993,20 L12,28 L18,28 L18.0001993,20 Z M5.0001993,8 L2.0001993,8 L2.0001993,11.5 C2.0001993,12.2309651 2.52305015,12.8398119 3.21516437,12.9729528 L3.35573929,12.9931334 L3.5001993,13 C4.27989542,13 4.92064798,12.4051119 4.99333272,11.64446 L5.0001993,11.5 L5.0001993,8 Z M11.0001993,8 L7.0001993,8 L7.0001993,11 C7.0001993,12.0016437 7.736529,12.8313084 8.69742495,12.9772306 L8.85093695,12.9945143 L9.0001993,13 C10.0545611,13 10.9183644,12.1841222 10.9947136,11.1492623 L11.0001993,11 L11.0001993,8 Z M17.0001993,8 L13.0001993,8 L13.0001993,11 C13.0001993,12.0016437 13.736529,12.8313084 14.697425,12.9772306 L14.850937,12.9945143 L15.0001993,13 C16.0545611,13 16.9183644,12.1841222 16.9947136,11.1492623 L17.0001993,11 L17.0001993,8 Z M23.0001993,8 L19.0001993,8 L19.0001993,11 C19.0001993,12.0016437 19.736529,12.8313084 20.697425,12.9772306 L20.850937,12.9945143 L21.0001993,13 C22.0545611,13 22.9183644,12.1841222 22.9947136,11.1492623 L23.0001993,11 L23.0001993,8 Z M28.0001993,8 L25.0001993,8 L25.0001993,11.5 C25.0001993,12.2309651 25.5230502,12.8398119 26.2151644,12.9729528 L26.3557393,12.9931334 L26.5001993,13 C27.2798954,13 27.920648,12.4051119 27.9933327,11.64446 L28.0001993,11.5 L28.0001993,8 Z M24.4641993,2 L5.5351993,2 L2.8681993,6 L27.1311993,6 L24.4641993,2 Z" id="icon"></path>
+                                                                </g>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                    Uz vietas birojā
+                                    <span>Bez maksas</span>
+                                </label>
+
+                                <input type="radio" id="courier" name="delivery" value="courier">
+                                <label for="courier">
+                                    <svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <title>C537FC32-1C51-48AA-81A8-909A63EE133C</title>
+                                        <g id="Dizains" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="08.02.-Checkout---Uz-vietas-birojā" transform="translate(-582.000000, -402.000000)" fill="#5CC1DE">
+                                                <g id="Content" transform="translate(215.000000, 200.000000)">
+                                                    <g id="Form" transform="translate(0.000000, 72.000000)">
+                                                        <g id="Content" transform="translate(50.000000, 40.000000)">
+                                                            <g id="Select-items" transform="translate(0.000000, 50.000000)">
+                                                                <g id="Block-2" transform="translate(226.000000, 0.000000)">
+                                                                    <g id="Icon" transform="translate(91.000000, 40.000000)">
+                                                                        <path d="M12,16 C12.7103487,16 13.4195635,16.0432455 14.1237904,16.1293472 C14.3616678,16.1584311 14.5987725,16.1923797 14.8349587,16.2311536 C14.4584526,16.7981929 14.1939585,17.4450759 14.073455,18.1413009 L13.8810694,18.1145642 C13.2573278,18.038303 12.6291693,18 12,18 C9.88261568,18 7.78932154,18.4338078 5.84874708,19.2728391 L5.43529412,19.4588235 L5.09019608,19.6201681 C3.27727677,20.4677667 2.09368076,22.2507312 2.00531675,24.2369193 L2,24.4761905 L2,28 L14.1002591,28.0011864 C14.2504406,28.7401134 14.5635837,29.4198354 15.0005351,30.0011995 L2,30 C0.945638205,30 0.0818348781,29.1841222 0.00548573643,28.1492623 L0,28 L0,24.4761905 C0,21.7105188 1.54924714,19.1867724 3.99554179,17.9298363 L4.24313725,17.8084034 L4.58823529,17.6470588 C6.90851887,16.5622509 9.438648,16 12,16 Z M27,16 C28.5976809,16 29.9036609,17.24892 29.9949073,18.8237272 L30,19 L30,27 C30,28.5976809 28.75108,29.9036609 27.1762728,29.9949073 L27,30 L19,30 C17.4023191,30 16.0963391,28.75108 16.0050927,27.1762728 L16,27 L16,19 C16,17.4023191 17.24892,16.0963391 18.8237272,16.0050927 L19,16 L27,16 Z M27,18 L24,18 L24,20 C24,20.5522847 23.5522847,21 23,21 C22.4871642,21 22.0644928,20.6139598 22.0067277,20.1166211 L22,20 L22,18 L19,18 C18.4871642,18 18.0644928,18.3860402 18.0067277,18.8833789 L18,19 L18,27 C18,27.5128358 18.3860402,27.9355072 18.8833789,27.9932723 L19,28 L27,28 C27.5128358,28 27.9355072,27.6139598 27.9932723,27.1166211 L28,27 L28,19 C28,18.4871642 27.6139598,18.0644928 27.1166211,18.0067277 L27,18 Z M9,8 L9,9 C9,10.5976809 10.24892,11.9036609 11.8237272,11.9949073 L12,12 C13.5976809,12 14.9036609,10.75108 14.9949073,9.17627279 L15,9 L15,8 L17,8 L17,9 C17,11.7614237 14.7614237,14 12,14 C9.3112453,14 7.11818189,11.8776933 7.00461951,9.21688962 L7,9 L7,8 L9,8 Z M12,0 C14.6887547,0 16.8818181,2.12230671 16.9953805,4.78311038 L17,5 L18,5 C18.5522847,5 19,5.44771525 19,6 C19,6.55228475 18.5522847,7 18,7 L6,7 C5.44771525,7 5,6.55228475 5,6 C5,5.44771525 5.44771525,5 6,5 L7,5 C7,2.3112453 9.12230671,0.118181885 11.7831104,0.00461951385 L12,0 Z M12,2 C10.4023191,2 9.09633912,3.24891996 9.00509269,4.82372721 L9,5 L15,5 C15,3.40231912 13.75108,2.09633912 12.1762728,2.00509269 L12,2 Z" id="icon"></path>
+                                                                    </g>
+                                                                </g>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                    Piegāde ar kurjeru
+                                    <span>no 3,99 €</span>
+                                </label>
+
+                                <input type="radio" id="packstation" name="delivery" value="packstation">
+                                <label for="packstation">
+                                    <svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <title>AD13B0C8-E9CB-44EA-98EC-40B9761C70CC</title>
+                                        <g id="Dizains" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="08.02.-Checkout---Uz-vietas-birojā" transform="translate(-808.000000, -402.000000)" fill="#5CC1DE">
+                                                <g id="Content" transform="translate(215.000000, 200.000000)">
+                                                    <g id="Form" transform="translate(0.000000, 72.000000)">
+                                                        <g id="Content" transform="translate(50.000000, 40.000000)">
+                                                            <g id="Select-items" transform="translate(0.000000, 50.000000)">
+                                                                <g id="Block-3" transform="translate(452.000000, 0.000000)">
+                                                                    <g id="Icon" transform="translate(91.000000, 40.000000)">
+                                                                        <path d="M27.0006085,0 C27.4064997,0 27.7676848,0.244609351 27.9221549,0.611624392 L27.9621324,0.725278872 L29.9621324,7.72527887 C30.1339149,8.32651765 29.7191271,8.92517758 29.1158372,8.99352775 L29.0006085,9 L28,9 L28.0007964,14.1000563 C27.7584203,14.0508468 27.509677,14.0191699 27.2559481,14.006407 L27.0006085,14 L26,14 L26,13 L19.0006085,13 L19.0006085,14 C18.6580762,14 18.3235887,14.0344436 18.0004205,14.1000563 L18.0006085,13 L12.0006085,13 L12.0006085,24 L14,24 L14,25 L12.0006085,25 L12.0006085,28 L14.1008676,28.0011864 C14.2510491,28.7401134 14.5641921,29.4198354 15.0011435,30.0011995 L3.00060846,30 C2.48777262,30 2.0651013,29.6139598 2.00733619,29.1166211 L2.00060846,29 L2,9 L1.00060846,9 C0.375310687,9 -0.0863641961,8.43670706 0.0136519771,7.83785208 L0.0390845112,7.72527887 L2.03908451,0.725278872 C2.15059141,0.335004729 2.48501435,0.0549159104 2.88034428,0.00721607686 L3.00060846,0 L27.0006085,0 Z M27.0006085,16 C28.5982893,16 29.9042693,17.24892 29.9955158,18.8237272 L30.0006085,19 L30.0006085,27 C30.0006085,28.5976809 28.7516885,29.9036609 27.1768812,29.9949073 L27.0006085,30 L19.0006085,30 C17.4029276,30 16.0969476,28.75108 16.0057012,27.1762728 L16.0006085,27 L16.0006085,19 C16.0006085,17.4023191 17.2495284,16.0963391 18.8243357,16.0050927 L19.0006085,16 L27.0006085,16 Z M11.0006085,25 L4,25 L4.00060846,28 L11.0006085,28 L11.0006085,25 Z M22.0006085,18 L19.0006085,18 C18.4877726,18 18.0651013,18.3860402 18.0073362,18.8833789 L18.0006085,19 L18.0006085,27 C18.0006085,27.5128358 18.3866486,27.9355072 18.8839873,27.9932723 L19.0006085,28 L27.0006085,28 C27.5134443,28 27.9361156,27.6139598 27.9938807,27.1166211 L28.0006085,27 L28.0006085,19 C28.0006085,18.4871642 27.6145683,18.0644928 27.1172296,18.0067277 L27.0006085,18 L24.0006085,18 L24.0006085,20 C24.0006085,20.5522847 23.5528932,21 23.0006085,21 C22.4877726,21 22.0651013,20.6139598 22.0073362,20.1166211 L22.0006085,20 L22.0006085,18 Z M11.0006085,21 L4,21 L4,24 L11.0006085,24 L11.0006085,21 Z M11.0006085,17 L4,17 L4,20 L11.0006085,20 L11.0006085,17 Z M11.0006085,13 L4,13 L4,16 L11.0006085,16 L11.0006085,13 Z M11.0006085,9 L4.00060846,9 L4,12 L11.0006085,12 L11.0006085,9 Z M26.0006085,9 L19.0006085,9 L19.0006085,12 L26,12 L26.0006085,9 Z M18.0006085,9 L12.0006085,9 L12.0006085,12 L18.0006085,12 L18.0006085,9 Z M26.2456085,2 L3.75460846,2 L2.32560846,7 L27.6746085,7 L26.2456085,2 Z" id="icon"></path>
+                                                                    </g>
+                                                                </g>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                    Saņemt pakomātā
+                                    <span>no 0,99 €</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="delivery-left-group">
+                            <div class="title-s">Informācija par maksātāju</div>
+
+                        </div>
+                        <button type="submit" class="btn">Noformēt pasūtījumu</button>
+                    </form>
+                </div>
+            </div>
+            <div class="delivery-right">
+                <div class="form">
+                    <div class="delivery-right-title">Kopsavilkums</div>
+                    <div class="delivery-right-content">
+                        <div class="delivery-right-content-item">
+                            <div class="delivery-right-content-item-left">
+                                <div class="delivery-right-content-item-left-title">
+                                    BIO Aragan ķermeņa skrubis 150ml Fle..
+                                </div>
+                                <div class="delivery-right-content-item-left-quant">
+                                    Daudzums: <span>2</span> gab.
+                                </div>
+                            </div>
+                            <div class="delivery-right-content-item-right">
+                                <div class="cards-item-wrap-info-wrap-price discount">
+                                    11,50 €
+                                </div>
+                                <div class="cards-item-wrap-info-wrap-old">
+                                    11,50 €
+                                </div>
+                            </div>
+                        </div>
+                        <div class="delivery-right-content-item">
+                            <div class="delivery-right-content-item-left">
+                                <div class="delivery-right-content-item-left-title">
+                                    BIO Aragan ķermeņa skrubis 150ml Fle..
+                                </div>
+                                <div class="delivery-right-content-item-left-quant">
+                                    Daudzums: <span>1</span> gab.
+                                </div>
+                            </div>
+                            <div class="delivery-right-content-item-right">
+                                <div class="cards-item-wrap-info-wrap-price">
+                                    9,50 €
+                                </div>
+                            </div>
+                        </div>
+                        <div class="delivery-right-content-item">
+                            <div class="delivery-right-content-item-left">
+                                <div class="delivery-right-content-item-left-title">
+                                    BIO Aragan ķermeņa skrubis 150ml Fle..
+                                </div>
+                                <div class="delivery-right-content-item-left-quant">
+                                    Daudzums: <span>1</span> gab.
+                                </div>
+                            </div>
+                            <div class="delivery-right-content-item-right">
+                                <div class="cards-item-wrap-info-wrap-price">
+                                    9,50 €
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="delivery-right-total">
+                        <div class="delivery-right-total-item">
+                            <div class="delivery-right-total-item-title">Preču kopsumma:</div>
+                            <div class="delivery-right-total-item-price"><span>70,50</span>€</div>
+                        </div>
+                        <div class="delivery-right-total-item">
+                            <div class="delivery-right-total-item-title">PVN:</div>
+                            <div class="delivery-right-total-item-price"><span>0,00</span>€</div>
+                        </div>
+                        <div class="delivery-right-total-item">
+                            <div class="delivery-right-total-item-title">Piegādes izmaksas:</div>
+                            <div class="delivery-right-total-item-price"><span>0,00</span>€</div>
+                        </div>
+                        <div class="delivery-right-total-item">
+                            <div class="delivery-right-total-item-title">Atlaide:</div>
+                            <div class="delivery-right-total-item-price"><span>- 4,00</span>€</div>
+                        </div>
+                    </div>
+
+                    <div class="delivery-right-sum">
+                        <div class="delivery-right-content-item-left-quant">
+                            Kopā apmaksai:
+                        </div>
+                        <div class="cardPage-right_content_item_sum result-sum">
+                            <span>4,00</span>€
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer simple-footer">
+    <div class="container">
+        <div class="footer_bottom">
+            <div class="footer_bottom_item">© EVI 2021. Visas tiesības aizsargātas.</div>
+            <div class="footer_bottom_item">
+                Veikala izstrāde
+                <div class="footer_bottom_item_link">
+                    <a href="#">
+                        <svg width="52px" height="11px" viewBox="0 0 52 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <title>303555CB-4955-425B-8C8C-438DFD72BC81</title>
+                            <g id="Dizains" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="01.01.-Homepage" transform="translate(-1333.000000, -4608.000000)" fill="#282C33" fill-rule="nonzero">
+                                    <g id="Footer" transform="translate(0.000000, 3987.000000)">
+                                        <g id="Copyrights" transform="translate(215.000000, 613.000000)">
+                                            <g id="Developed-by" transform="translate(1018.000000, 0.000000)">
+                                                <g transform="translate(100.000000, 8.000000)" id="datateks">
+                                                    <path d="M38.0868616,4.6037037 C37.7314797,4.11481481 37.2971242,3.82962963 36.7837948,3.66666667 C36.2309786,3.5037037 35.6781625,3.5037037 35.1253463,3.58518519 C34.4935563,3.70740741 33.9407402,3.99259259 33.5063846,4.48148148 C33.1904896,4.84814815 32.9535684,5.2962963 32.7956209,5.78518519 C32.6771603,6.19259259 32.6376734,6.55925926 32.5981865,6.96666667 C32.5586997,7.4962963 32.5981865,8.02592593 32.7166472,8.55555556 C32.8351078,9.0037037 32.9930553,9.45185185 33.2694633,9.81851852 C33.5063846,10.1851852 33.8617664,10.4296296 34.2171482,10.6333333 C34.6909907,10.8777778 35.1648331,10.9592593 35.6781625,11 L36.1914918,11 C36.4678999,10.9592593 36.744308,10.9592593 36.9812292,10.8777778 C37.4945585,10.7555556 37.968401,10.5925926 38.4027565,10.3888889 C38.4422434,10.3481481 38.4422434,10.3481481 38.4422434,10.2666667 L38.4422434,8.88148148 L38.4422434,8.8 C38.4027565,8.84074074 38.4027565,8.84074074 38.3632697,8.84074074 C38.1263484,8.96296296 37.8894272,9.12592593 37.6130191,9.24814815 C37.0602029,9.53333333 36.4678999,9.65555556 35.8361099,9.57407407 C35.2832938,9.49259259 34.9279119,9.20740741 34.7304776,8.67777778 C34.612017,8.35185185 34.5725301,8.02592593 34.5330432,7.7 L34.5330432,7.45555556 L38.7186515,7.45555556 L38.7186515,7.41481481 C38.7186515,6.96666667 38.7186515,6.47777778 38.6396778,6.02962963 C38.560704,5.54074074 38.4027565,5.01111111 38.0868616,4.6037037 L38.0868616,4.6037037 Z M34.612017,6.3962963 C34.6515038,5.90740741 34.7699644,5.5 35.1253463,5.13333333 C35.520215,4.72592593 36.3099524,4.72592593 36.6653342,5.33703704 C36.7837948,5.58148148 36.8627686,5.82592593 36.9022555,6.11111111 C36.9022555,6.19259259 36.9022555,6.31481481 36.9417423,6.3962963 L34.612017,6.3962963 Z M51.98624,8.35185185 C51.9467532,7.94444444 51.7888057,7.57777778 51.4729107,7.29259259 C51.2359895,7.04814815 50.9595814,6.88518519 50.6436864,6.76296296 C50.2488177,6.6 49.8144622,6.47777778 49.4195934,6.35555556 C49.1431854,6.27407407 48.9062641,6.19259259 48.6693429,5.98888889 C48.5113954,5.86666667 48.3929348,5.7037037 48.3929348,5.45925926 C48.3929348,5.21481481 48.5508823,5.05185185 48.7878035,5.01111111 C49.2221591,4.88888889 49.6170278,4.88888889 50.0513834,4.97037037 C50.5252258,5.09259259 50.9200945,5.25555556 51.3544501,5.5 C51.393937,5.5 51.393937,5.54074074 51.4334239,5.54074074 L51.4334239,4.03333333 C51.4334239,3.99259259 51.393937,3.99259259 51.393937,3.95185185 C50.9200945,3.74814815 50.4067652,3.58518519 49.8934359,3.54444444 C49.4195934,3.5037037 48.945751,3.5037037 48.4719086,3.58518519 C47.9585792,3.66666667 47.5242237,3.82962963 47.0898681,4.15555556 C46.8529469,4.31851852 46.6949994,4.56296296 46.5765388,4.84814815 C46.4185913,5.21481481 46.3791044,5.62222222 46.4185913,6.02962963 C46.4580781,6.35555556 46.5765388,6.64074074 46.7739731,6.88518519 C47.0108943,7.17037037 47.2873024,7.37407407 47.6031974,7.4962963 C47.9980661,7.7 48.4324217,7.78148148 48.8272904,7.94444444 C49.1036985,8.02592593 49.3406197,8.10740741 49.5775409,8.27037037 C49.8934359,8.47407407 50.0118965,8.8 49.853949,9.12592593 C49.7354884,9.37037037 49.5380541,9.45185185 49.3406197,9.53333333 C48.9852379,9.65555556 48.5903692,9.65555556 48.2349873,9.57407407 C47.7611449,9.45185185 47.3662762,9.28888889 46.9319206,9.08518519 C46.7739731,9.0037037 46.6555125,8.96296296 46.497565,8.88148148 L46.497565,10.3481481 C46.497565,10.3888889 46.5370519,10.3888889 46.5370519,10.4296296 C47.1688418,10.7148148 47.8006318,10.8777778 48.4719086,10.9592593 C48.5903692,10.9592593 48.7088298,10.9592593 48.7878035,11 L49.1826722,11 C49.3406197,11 49.4590803,10.9592593 49.6170278,10.9592593 C50.1303571,10.8777778 50.6041996,10.7555556 51.0385551,10.4703704 C51.3544501,10.2666667 51.6308582,9.98148148 51.7888057,9.61481481 C51.98624,9.16666667 52.0257269,8.75925926 51.98624,8.35185185 L51.98624,8.35185185 Z M30.4264087,5.25555556 L32.0848572,5.25555556 C32.1243441,5.25555556 32.163831,5.25555556 32.163831,5.17407407 C32.2822916,4.84814815 32.4007522,4.48148148 32.5192128,4.15555556 C32.5586997,4.03333333 32.5981865,3.95185185 32.6376734,3.82962963 L30.3474349,3.82962963 L30.3474349,1.67037037 C30.3079481,1.67037037 30.3079481,1.71111111 30.2684612,1.71111111 C29.6366712,2.15925926 29.0443682,2.56666667 28.4125783,3.01481481 C28.3336045,3.05555556 28.2941176,3.0962963 28.2941176,3.17777778 L28.2941176,8.67777778 C28.2941176,8.92222222 28.2941176,9.12592593 28.3336045,9.37037037 C28.4125783,9.77777778 28.5310389,10.1037037 28.807447,10.3888889 C29.1233419,10.7148148 29.4787238,10.8777778 29.8735925,10.9185185 C29.9920531,10.9592593 30.1105137,10.9592593 30.2289743,10.9592593 L30.6633299,10.9592593 C30.8212774,10.9592593 31.0187117,10.9185185 31.1766592,10.9185185 C31.532041,10.8777778 31.8874229,10.7962963 32.2428047,10.6333333 C32.2822916,10.6333333 32.3217785,10.5925926 32.3217785,10.5518519 L32.3217785,9.32962963 L32.3217785,9.24814815 C32.2822916,9.24814815 32.2822916,9.28888889 32.2428047,9.28888889 C31.847936,9.49259259 31.4135804,9.57407407 30.939738,9.53333333 C30.6633299,9.49259259 30.4658955,9.37037037 30.3474349,9.12592593 C30.2684612,8.92222222 30.2289743,8.67777778 30.2289743,8.43333333 L30.2289743,5.2962963 L30.4264087,5.25555556 Z M46.1026963,3.78888889 C46.1026963,3.74814815 46.1026963,3.74814815 46.1026963,3.78888889 L43.9309184,3.78888889 C43.8914316,3.78888889 43.8914316,3.78888889 43.8519447,3.82962963 C43.6150235,4.15555556 43.3386154,4.48148148 43.1016941,4.80740741 C42.6673386,5.33703704 42.2724699,5.86666667 41.8381143,6.43703704 C41.7986274,6.47777778 41.7591405,6.51851852 41.6801668,6.47777778 L41.6801668,0 C41.00889,0.162962963 40.3771001,0.325925926 39.7453101,0.488888889 C39.6663364,0.488888889 39.6663364,0.52962963 39.6663364,0.611111111 L39.6663364,10.837037 L41.6801668,10.837037 L41.6801668,7.65925926 C41.7591405,7.61851852 41.7591405,7.65925926 41.7986274,7.7 C42.4699042,8.71851852 43.141181,9.73703704 43.7729709,10.7555556 C43.8124578,10.7962963 43.8124578,10.7962963 43.8914316,10.7962963 L46.1816701,10.7962963 C45.273472,9.49259259 44.3257871,8.18888889 43.4175891,6.88518519 C44.3257871,5.82592593 45.2339852,4.80740741 46.1026963,3.78888889 L46.1026963,3.78888889 Z" id="Shape" opacity="0.699999988"></path>
+                                                    <path d="M18.096137,11 C17.976295,11 17.856453,10.9596273 17.7366111,10.9596273 C17.3371378,10.878882 16.9376646,10.7173913 16.6580334,10.4347826 C16.3784021,10.1521739 16.2186128,9.78881988 16.1786655,9.42546584 C16.1387182,9.22360248 16.1387182,8.98136646 16.1387182,8.73913043 L16.1387182,3.28881988 C16.1387182,3.20807453 16.1786655,3.16770186 16.2186128,3.12732919 C16.85777,2.68322981 17.4569798,2.27950311 18.096137,1.83540373 C18.096137,1.83540373 18.1360843,1.79503106 18.1760316,1.79503106 L18.1760316,3.97515528 L20.4929763,3.97515528 C20.3731343,4.05590062 20.3731343,4.13664596 20.333187,4.25776398 C20.213345,4.58074534 20.0935031,4.94409938 19.9736611,5.26708075 C19.9736611,5.30745342 19.9337138,5.34782609 19.8937665,5.34782609 L18.096137,5.34782609 L18.096137,8.45652174 C18.096137,8.69875776 18.096137,8.94099379 18.2159789,9.14285714 C18.3358209,9.38509317 18.5355575,9.54658385 18.8151888,9.54658385 C19.2546093,9.58695652 19.6940299,9.50621118 20.1334504,9.30434783 C20.1733977,9.30434783 20.1733977,9.26397516 20.213345,9.26397516 L20.213345,10.5559006 C20.213345,10.5962733 20.213345,10.636646 20.1334504,10.636646 C19.7739245,10.757764 19.4143986,10.8385093 19.0548727,10.9192547 C18.8950834,10.9596273 18.6953468,10.9596273 18.5355575,10.9596273 L18.4956102,10.9596273 C18.3757682,11 18.2159789,11 18.096137,11 L18.096137,11 Z M0,10.7981366 L0,0.785714286 L3.67515364,0.785714286 C4.35425812,0.785714286 4.99341528,0.866459627 5.63257243,1.10869565 C6.67120281,1.47204969 7.43020193,2.19875776 7.82967515,3.2484472 C8.02941176,3.73291925 8.14925373,4.25776398 8.18920105,4.7826087 C8.22914838,5.30745342 8.2690957,5.83229814 8.22914838,6.35714286 C8.18920105,7.04347826 8.06935909,7.72981366 7.78972783,8.33540373 C7.43020193,9.18322981 6.8309921,9.82919255 5.99209833,10.2732919 C5.47278314,10.515528 4.95346795,10.6770186 4.39420544,10.757764 C4.07462687,10.7981366 3.71510097,10.7981366 3.39552239,10.8385093 L0.0798946444,10.8385093 C0.0798946444,10.7981366 0.0399473222,10.7981366 0,10.7981366 Z M2.07726076,2.27950311 L2.07726076,9.38509317 L2.99604917,9.38509317 C3.39552239,9.38509317 3.79499561,9.38509317 4.19446883,9.30434783 C4.91352063,9.14285714 5.43283582,8.73913043 5.7524144,8.05279503 C5.99209833,7.56832298 6.07199298,7.00310559 6.1119403,6.4378882 C6.15188762,5.91304348 6.15188762,5.42857143 6.07199298,4.90372671 C6.03204565,4.5 5.95215101,4.05590062 5.79236172,3.69254658 C5.51273047,3.00621118 5.0333626,2.5621118 4.35425812,2.40062112 C3.9547849,2.27950311 3.595259,2.23913043 3.19578578,2.27950311 L2.07726076,2.27950311 Z M14.7805092,7.72981366 L14.7805092,5.7515528 C14.7805092,5.42857143 14.7405619,5.10559006 14.6207199,4.82298137 C14.4609306,4.41925466 14.1812994,4.05590062 13.7818262,3.89440994 C13.4223003,3.73291925 13.022827,3.65217391 12.6233538,3.61180124 C11.9841967,3.57142857 11.3849868,3.61180124 10.785777,3.73291925 C10.3064091,3.8136646 9.82704126,3.97515528 9.38762072,4.17701863 C9.3476734,4.2173913 9.30772608,4.25776398 9.30772608,4.29813665 L9.30772608,5.7515528 C9.30772608,5.7515528 9.3476734,5.7515528 9.3476734,5.71118012 C9.86698859,5.38819876 10.4262511,5.10559006 11.0654083,4.98447205 C11.4249342,4.94409938 11.7844601,4.90372671 12.1040386,4.98447205 C12.3836699,5.06521739 12.5834065,5.22670807 12.7032485,5.50931677 C12.8230904,5.83229814 12.7831431,6.1552795 12.7831431,6.51863354 L12.0640913,6.51863354 C11.8244074,6.51863354 11.5447761,6.51863354 11.3050922,6.55900621 C10.8656716,6.59937888 10.4661984,6.72049689 10.0267779,6.88198758 C9.26777875,7.20496894 8.82835821,7.77018634 8.70851624,8.61801242 C8.66856892,8.98136646 8.66856892,9.38509317 8.78841089,9.7484472 C9.02809482,10.3136646 9.42756804,10.7173913 10.0267779,10.878882 C10.1466198,10.9192547 10.2664618,10.9192547 10.4262511,10.9596273 L10.905619,10.9596273 C11.1053556,10.9192547 11.3450395,10.9192547 11.5447761,10.878882 C11.9841967,10.7981366 12.3836699,10.5559006 12.7032485,10.2329193 C12.7431958,10.1925466 12.7831431,10.1521739 12.8630378,10.1118012 C12.9029851,10.3540373 12.9029851,10.5559006 12.9429324,10.7981366 L14.8604039,10.7981366 L14.8604039,10.7173913 C14.7805092,9.70807453 14.7805092,8.73913043 14.7805092,7.72981366 L14.7805092,7.72981366 Z M12.6633011,9.02173913 C12.4236172,9.26397516 12.1839333,9.42546584 11.904302,9.54658385 C11.6246708,9.62732919 11.3450395,9.66770186 11.0654083,9.58695652 C10.785777,9.50621118 10.665935,9.30434783 10.6259877,9.02173913 C10.5860404,8.73913043 10.6259877,8.45652174 10.8257243,8.21428571 C10.9855136,8.01242236 11.1852502,7.89130435 11.4249342,7.81055901 C11.7045654,7.68944099 12.024144,7.64906832 12.3037752,7.64906832 L12.7831431,7.64906832 L12.7831431,8.77950311 C12.7831431,8.86024845 12.7431958,8.94099379 12.6633011,9.02173913 L12.6633011,9.02173913 Z M26.6848112,7.72981366 L26.6848112,5.7515528 C26.6848112,5.42857143 26.6448639,5.10559006 26.5250219,4.82298137 C26.3652327,4.41925466 26.0856014,4.05590062 25.6861282,3.89440994 C25.3266023,3.73291925 24.9271291,3.65217391 24.5276558,3.61180124 C23.8884987,3.57142857 23.2892888,3.61180124 22.690079,3.73291925 C22.2107112,3.8136646 21.7313433,3.97515528 21.2919227,4.17701863 C21.2519754,4.2173913 21.2120281,4.25776398 21.2120281,4.29813665 L21.2120281,5.7515528 C21.2120281,5.7515528 21.2519754,5.7515528 21.2519754,5.71118012 C21.7712906,5.38819876 22.3305531,5.10559006 22.9697103,4.98447205 C23.3292362,4.94409938 23.6887621,4.90372671 24.0083406,4.98447205 C24.2879719,5.06521739 24.4877085,5.22670807 24.6075505,5.50931677 C24.7273924,5.83229814 24.6874451,6.1552795 24.6874451,6.51863354 L23.9683933,6.51863354 C23.7287094,6.51863354 23.4490781,6.51863354 23.2093942,6.55900621 C22.7699737,6.59937888 22.3705004,6.72049689 21.9310799,6.88198758 C21.1720808,7.20496894 20.7326602,7.77018634 20.6128183,8.61801242 C20.5728709,8.98136646 20.5728709,9.38509317 20.6927129,9.7484472 C20.9323968,10.3136646 21.3318701,10.7173913 21.9310799,10.878882 C22.0509219,10.9192547 22.1707638,10.9192547 22.3305531,10.9596273 L22.809921,10.9596273 C23.0096576,10.9192547 23.2493415,10.9192547 23.4490781,10.878882 C23.8884987,10.7981366 24.2879719,10.5559006 24.6075505,10.2329193 C24.6474978,10.1925466 24.6874451,10.1521739 24.7673398,10.1118012 C24.8072871,10.3540373 24.8072871,10.5559006 24.8472344,10.7981366 L26.7647059,10.7981366 L26.7647059,10.7173913 C26.6848112,9.70807453 26.6848112,8.73913043 26.6848112,7.72981366 Z M24.5676032,9.02173913 C24.3279192,9.26397516 24.0882353,9.42546584 23.808604,9.54658385 C23.5289728,9.62732919 23.2493415,9.66770186 22.9697103,9.58695652 C22.690079,9.50621118 22.5702371,9.30434783 22.5302897,9.02173913 C22.4903424,8.73913043 22.5302897,8.45652174 22.7300263,8.21428571 C22.8898156,8.01242236 23.0895522,7.89130435 23.3292362,7.81055901 C23.6088674,7.68944099 23.928446,7.64906832 24.2080773,7.64906832 L24.6874451,7.64906832 L24.6874451,8.77950311 C24.6874451,8.86024845 24.6474978,8.94099379 24.5676032,9.02173913 L24.5676032,9.02173913 Z" id="Shape"></path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </a>
+                    <div class="footer_bottom_item_link_dots">
+                        <div class="footer_bottom_item_link_dots_dot">
+                            <a href="#">
+                                <svg width="2px" height="2px" viewBox="0 0 2 2" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <title>FF48190C-924D-4BD5-9814-FF601377B67E</title>
+                                    <g id="Dizains" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <g id="01.01.-Homepage" transform="translate(-1333.000000, -4623.000000)" fill="#282C33">
+                                            <g id="Footer" transform="translate(0.000000, 3987.000000)">
+                                                <g id="Copyrights" transform="translate(215.000000, 613.000000)">
+                                                    <g id="Developed-by" transform="translate(1018.000000, 0.000000)">
+                                                        <g transform="translate(100.000000, 8.000000)" id="projects">
+                                                            <g transform="translate(0.000000, 15.000000)">
+                                                                <rect id="dot" x="0" y="0" width="2" height="2"></rect>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="footer_bottom_item_link_dots_dot">
+                            <a href="#">
+                                <svg width="2px" height="2px" viewBox="0 0 2 2" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <title>FF48190C-924D-4BD5-9814-FF601377B67E</title>
+                                    <g id="Dizains" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <g id="01.01.-Homepage" transform="translate(-1333.000000, -4623.000000)" fill="#282C33">
+                                            <g id="Footer" transform="translate(0.000000, 3987.000000)">
+                                                <g id="Copyrights" transform="translate(215.000000, 613.000000)">
+                                                    <g id="Developed-by" transform="translate(1018.000000, 0.000000)">
+                                                        <g transform="translate(100.000000, 8.000000)" id="projects">
+                                                            <g transform="translate(0.000000, 15.000000)">
+                                                                <rect id="dot" x="0" y="0" width="2" height="2"></rect>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="footer_bottom_item_link_dots_dot">
+                            <a href="#">
+                                <svg width="2px" height="2px" viewBox="0 0 2 2" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <title>FF48190C-924D-4BD5-9814-FF601377B67E</title>
+                                    <g id="Dizains" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <g id="01.01.-Homepage" transform="translate(-1333.000000, -4623.000000)" fill="#282C33">
+                                            <g id="Footer" transform="translate(0.000000, 3987.000000)">
+                                                <g id="Copyrights" transform="translate(215.000000, 613.000000)">
+                                                    <g id="Developed-by" transform="translate(1018.000000, 0.000000)">
+                                                        <g transform="translate(100.000000, 8.000000)" id="projects">
+                                                            <g transform="translate(0.000000, 15.000000)">
+                                                                <rect id="dot" x="0" y="0" width="2" height="2"></rect>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="footer_bottom_item_link_dots_dot">
+                            <a href="#">
+                                <svg width="2px" height="2px" viewBox="0 0 2 2" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <title>FF48190C-924D-4BD5-9814-FF601377B67E</title>
+                                    <g id="Dizains" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <g id="01.01.-Homepage" transform="translate(-1333.000000, -4623.000000)" fill="#282C33">
+                                            <g id="Footer" transform="translate(0.000000, 3987.000000)">
+                                                <g id="Copyrights" transform="translate(215.000000, 613.000000)">
+                                                    <g id="Developed-by" transform="translate(1018.000000, 0.000000)">
+                                                        <g transform="translate(100.000000, 8.000000)" id="projects">
+                                                            <g transform="translate(0.000000, 15.000000)">
+                                                                <rect id="dot" x="0" y="0" width="2" height="2"></rect>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="overlay"></div>
+
+
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="js/swiper.js"></script>
+<script src="js/header.js"></script>
+<script src="js/validation.js"></script>
+</body>
+</html>

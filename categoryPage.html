@@ -192,7 +192,7 @@
     <div class="container">
         <div class="category_filter">
             <div class="accordion">
-                <div class="accordion-item">
+                <div class="accordion-item pb20">
                     <h2 class="accordion-header" id="headingOne">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
                             Kategorijas
@@ -364,6 +364,29 @@
                     </div>
                 </div>
             </div>
+            <div class="filter_logo">
+                <svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <title>EC55CEF6-E26F-475E-B10D-E1E136F2B07B</title>
+                    <g id="Dizains" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="05.-Kategorijas-atvērums" transform="translate(-215.000000, -844.000000)">
+                            <g id="Page-content" transform="translate(215.000000, 174.000000)">
+                                <g id="Filters" transform="translate(0.000000, 668.000000)">
+                                    <g id="Head" transform="translate(0.000004, 0.000000)">
+                                        <g id="ic-filters" transform="translate(0.000000, 2.000000)">
+                                            <rect id="icon-space" x="0" y="7.43525134e-05" width="22" height="22"></rect>
+                                            <g id="icon" transform="translate(1.999996, 0.000000)" fill="#5CC1DE">
+                                                <path d="M2,0 L16,0 C17.1045695,-2.02906125e-16 18,0.8954305 18,2 L18,6 C18,6.62951461 17.7036117,7.22229124 17.2,7.6 L10.5333333,12.6 C10.187141,12.8596443 9.76607376,13 9.33333333,13 L8.66666667,13 C8.23392624,13 7.81285901,12.8596443 7.46666667,12.6 L0.8,7.6 C0.296388315,7.22229124 -1.03312972e-15,6.62951461 0,6 L0,2 C-1.3527075e-16,0.8954305 0.8954305,2.02906125e-16 2,0 Z" id="Rectangle"></path>
+                                                <rect id="Rectangle" x="8" y="11" width="2" height="11" rx="1"></rect>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+                Filtrēšana
+            </div>
             <div class="accordion">
                 <div class="accordion-item accordion-filter">
                     <h2 class="accordion-header" id="headingSum">
@@ -393,7 +416,220 @@
                     </h2>
                     <div id="collapseSum" class="accordion-collapse collapse show">
                         <div class="accordion-body">
-                            hello
+                            <div class="input-container">
+                                <div class="input-wrap">
+                                    <span>No</span>
+                                    <input id="min" type="number" min="0" max="500">
+                                </div>
+                                <div class="input-wrap">
+                                    <span>Līdz</span>
+                                    <input id="max" type="number" min="0" max="500">
+                                </div>
+                            </div>
+
+                            <div class="multi-range-slider">
+                                <input type="range" id="input-left" min="0" step="1" max="500" value="0">
+                                <input type="range" id="input-right" min="0" step="1" max="500" value="0">
+
+                                <div class="slider-range">
+                                    <div class="track"></div>
+                                    <div class="range"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion-item accordion-filter">
+                    <h2 class="accordion-header" id="headingCheckOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCheckOne">
+                            Ražotājs
+                        </button>
+                        <div class="clearBtn">
+                            <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <title>DE26C5F7-3F1F-4D47-A49F-780190B67D20</title>
+                                <g id="Dizains" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g id="05.-Kategorijas-atvērums" transform="translate(-404.000000, -900.000000)" fill="#A1AAB3" fill-rule="nonzero">
+                                        <g id="Page-content" transform="translate(215.000000, 174.000000)">
+                                            <g id="Filters" transform="translate(0.000000, 668.000000)">
+                                                <g transform="translate(0.000000, 40.000000)" id="Filter-1">
+                                                    <g id="Clear" transform="translate(171.000000, 0.000000)">
+                                                        <g id="Icon-/-Chevrons-/-Down" transform="translate(18.000000, 18.000000)">
+                                                            <polygon id="Path" points="12.2928932 0.292893219 13.7071068 1.70710678 8.41389322 6.99989322 13.7071068 12.2928932 12.2928932 13.7071068 6.99989322 8.41389322 1.70710678 13.7071068 0.292893219 12.2928932 5.58589322 6.99989322 0.292893219 1.70710678 1.70710678 0.292893219 6.99989322 5.58589322"></polygon>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                    </h2>
+                    <div id="collapseCheckOne" class="accordion-collapse collapse show">
+                        <div class="accordion-body">
+                            <label class="checkbox-container">
+                                Ražotājs ABC
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-container">
+                                Ražotājs ABC
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-container">
+                                Ražotājs ABC
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-container">
+                                Ražotājs ABC
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-container">
+                                Ražotājs ABC
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-container">
+                                Ražotājs ABC
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-container">
+                                Ražotājs ABC
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-container">
+                                Ražotājs ABC
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-container">
+                                Ražotājs ABC
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-container">
+                                Ražotājs ABC
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion-item accordion-filter">
+                    <h2 class="accordion-header" id="headingCheckTwo">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCheckTwo">
+                            Kategorija
+                        </button>
+                        <div class="clearBtn">
+                            <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <title>DE26C5F7-3F1F-4D47-A49F-780190B67D20</title>
+                                <g id="Dizains" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g id="05.-Kategorijas-atvērums" transform="translate(-404.000000, -900.000000)" fill="#A1AAB3" fill-rule="nonzero">
+                                        <g id="Page-content" transform="translate(215.000000, 174.000000)">
+                                            <g id="Filters" transform="translate(0.000000, 668.000000)">
+                                                <g transform="translate(0.000000, 40.000000)" id="Filter-1">
+                                                    <g id="Clear" transform="translate(171.000000, 0.000000)">
+                                                        <g id="Icon-/-Chevrons-/-Down" transform="translate(18.000000, 18.000000)">
+                                                            <polygon id="Path" points="12.2928932 0.292893219 13.7071068 1.70710678 8.41389322 6.99989322 13.7071068 12.2928932 12.2928932 13.7071068 6.99989322 8.41389322 1.70710678 13.7071068 0.292893219 12.2928932 5.58589322 6.99989322 0.292893219 1.70710678 1.70710678 0.292893219 6.99989322 5.58589322"></polygon>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                    </h2>
+                    <div id="collapseCheckTwo" class="accordion-collapse collapse show">
+                        <div class="accordion-body">
+                            <label class="checkbox-container">
+                                Ražotājs ABC
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-container">
+                                Ražotājs ABC
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-container">
+                                Ražotājs ABC
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-container">
+                                Ražotājs ABC
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-container">
+                                Ražotājs ABC
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion-item accordion-filter">
+                    <h2 class="accordion-header" id="headingCheckThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCheckTree">
+                            Noslēgts filtrs
+                        </button>
+                        <div class="clearBtn">
+                            <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <title>DE26C5F7-3F1F-4D47-A49F-780190B67D20</title>
+                                <g id="Dizains" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g id="05.-Kategorijas-atvērums" transform="translate(-404.000000, -900.000000)" fill="#A1AAB3" fill-rule="nonzero">
+                                        <g id="Page-content" transform="translate(215.000000, 174.000000)">
+                                            <g id="Filters" transform="translate(0.000000, 668.000000)">
+                                                <g transform="translate(0.000000, 40.000000)" id="Filter-1">
+                                                    <g id="Clear" transform="translate(171.000000, 0.000000)">
+                                                        <g id="Icon-/-Chevrons-/-Down" transform="translate(18.000000, 18.000000)">
+                                                            <polygon id="Path" points="12.2928932 0.292893219 13.7071068 1.70710678 8.41389322 6.99989322 13.7071068 12.2928932 12.2928932 13.7071068 6.99989322 8.41389322 1.70710678 13.7071068 0.292893219 12.2928932 5.58589322 6.99989322 0.292893219 1.70710678 1.70710678 0.292893219 6.99989322 5.58589322"></polygon>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                    </h2>
+                    <div id="collapseCheckTree" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            <label class="checkbox-container">
+                                Ražotājs ABC
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-container">
+                                Ražotājs ABC
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-container">
+                                Ražotājs ABC
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-container">
+                                Ražotājs ABC
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
                         </div>
                     </div>
                 </div>
@@ -1559,7 +1795,6 @@
         </div>
     </div>
 </div>
-
 
 <div class="info">
     <div class="container">

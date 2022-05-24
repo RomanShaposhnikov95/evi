@@ -450,7 +450,7 @@ ul, li {
 }
 
 .discount {
-  color: #D91E03 !important;
+  color: #D91E03;
 }
 
 .advantage {
@@ -1959,6 +1959,9 @@ input[type=range]:focus::-ms-fill-upper {
 .delivery-right-content-item-right .cards-item-wrap-info-wrap-price {
   font-size: 14px;
   color: #5C6166;
+}
+.delivery-right-content-item-right .discount {
+  color: #D91E03;
 }
 .delivery-right-content-item-right .cards-item-wrap-info-wrap-old {
   margin: 0;

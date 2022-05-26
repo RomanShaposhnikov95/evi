@@ -199,7 +199,7 @@
                         <div class="delivery-left-group">
                             <div class="title-s">Saņemšanas veids</div>
                             <div class="delivery-left-group-radio">
-                                <input type="radio" id="inPlace" name="delivery" value="inPlace" checked>
+                                <input class="step-btn" type="radio" id="inPlace" name="delivery" value="inPlace" checked>
                                 <label for="inPlace">
                                     <svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                         <title>8CB5A5B7-BF3B-4CE8-BA92-81CE1E6CF123</title>
@@ -223,7 +223,7 @@
                                     <span>Bez maksas</span>
                                 </label>
 
-                                <input type="radio" id="courier" name="delivery" value="courier">
+                                <input class="step-btn" type="radio" id="courier" name="delivery" value="courier">
                                 <label for="courier">
                                     <svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                         <title>C537FC32-1C51-48AA-81A8-909A63EE133C</title>
@@ -249,7 +249,7 @@
                                     <span>no 3,99 €</span>
                                 </label>
 
-                                <input type="radio" id="packstation" name="delivery" value="packstation">
+                                <input class="step-btn" type="radio" id="packstation" name="delivery" value="packstation">
                                 <label for="packstation">
                                     <svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                         <title>AD13B0C8-E9CB-44EA-98EC-40B9761C70CC</title>
@@ -275,10 +275,300 @@
                                     <span>no 0,99 €</span>
                                 </label>
                             </div>
+                            <div class="delivery-left-group-change stepOne d-none">
+                                <div class="delivery-left-group-change-title">
+                                    Aizpildiet piegādes informāciju
+                                </div>
+                                <div class="tabs stepTwo d-none">
+                                    <nav>
+                                        <div class="nav nav-tabs" id="nav-tab-address" role="tablist">
+                                            <button class="nav-link active" id="nav-home-tab-address" data-bs-toggle="tab" data-bs-target="#nav-home-address" type="button"  aria-selected="true">
+                                                Klasiskais skats
+                                            </button>
+                                            <div class="border"></div>
+                                            <button class="nav-link" id="nav-delivery-tab-address" data-bs-toggle="tab" data-bs-target="#nav-delivery-address" type="button"  aria-selected="false">
+                                                Parādīt kartē
+                                            </button>
+                                        </div>
+                                    </nav>
+                                    <div class="tab-content" id="nav-tabContent-address">
+                                        <div class="tab-pane fade show active" id="nav-home-address" role="tabpanel" aria-labelledby="nav-home-tab-address">
+                                            <div class="register register-step">
+                                                <div class="form-content-wrap">
+                                                    <div class="form-content-wrap_title">
+                                                        Valsts <span class="req">*</span>
+                                                    </div>
+                                                    <input id="country" type="text" name="country">
+                                                    <span class="error-message"></span>
+                                                </div>
+                                                <div class="form-content-wrap">
+                                                    <div class="form-content-wrap_title">
+                                                        Pilsēta <span class="req">*</span>
+                                                    </div>
+                                                    <input id="town" type="text" name="town">
+                                                    <span class="error-message"></span>
+                                                </div>
+                                                <div class="form-content-wrap">
+                                                    <div class="form-content-wrap_title">
+                                                        Izvēlieties pakomāta adresi <span class="req">*</span>
+                                                    </div>
+                                                    <select id="location" class="select" style="color:#737980" onchange="this.style.color='black'">
+                                                        <option value="0" selected hidden>Izvēlēties</option>
+                                                        <option value="1">Rīgas gatve 5, Ādaži</option>
+                                                        <option value="2">Enerģētiķu iela 11, Aizkraukle</option>
+                                                        <option value="3">Dzirnavu iela 1, Aknīste</option>
+                                                        <option value="4">Pils iela 9b, Alūksne</option>
+                                                        <option value="5">Ulbrokas iela 22A, Rīga</option>
+                                                    </select>
+                                                    <span class="error-message"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="nav-delivery-address" role="tabpanel" aria-labelledby="nav-delivery-tab-address">
+                                            text2
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="delivery-left-group-change-address stepThree d-none">
+                                    <div class="form-content-wrap">
+                                        <div class="form-content-wrap_title">
+                                            Valsts <span class="req">*</span>
+                                        </div>
+                                        <select id="country-courier" class="select" style="color:#737980" onchange="this.style.color='black'">
+                                            <option value="0" selected hidden>Izvēlēties</option>
+                                            <option value="1">Latvija</option>
+                                            <option value="2">Lietuva</option>
+                                            <option value="3">Igaunija</option>
+                                        </select>
+                                        <span class="error-message"></span>
+                                    </div>
+                                    <div class="form-content-wrap">
+                                        <div class="form-content-wrap_title">
+                                            Pilsēta <span class="req">*</span>
+                                        </div>
+                                        <select id="city-courier" class="select" style="color:#737980" onchange="this.style.color='black'">
+                                            <option value="0" selected hidden>Izvēlēties</option>
+                                            <option value="1">Riga</option>
+                                            <option value="2">Ogre</option>
+                                            <option value="3">Liepāja</option>
+                                            <option value="3">Jūrmala</option>
+                                            <option value="3">Daugavpils</option>
+                                            <option value="3">Jelgava</option>
+                                        </select>
+                                        <span class="error-message"></span>
+                                    </div>
+                                    <div class="form-content-wrap">
+                                        <div class="form-content-wrap_title">
+                                            Pasta indekss <span class="req">*</span>
+                                        </div>
+                                        <input id="postId" type="text" name="post">
+                                        <span class="error-message"></span>
+                                    </div>
+                                    <div class="form-content-wrap">
+                                        <div class="form-content-wrap_title">
+                                            Piegādes adrese <span class="req">*</span>
+                                        </div>
+                                        <input id="address" type="text" name="address">
+                                        <span class="error-message"></span>
+                                    </div>
+                                    <div class="form-content-wrap">
+                                        <div class="form-content-wrap_title">
+                                            Mājas numurs <span class="req">*</span>
+                                        </div>
+                                        <input id="houseNum" type="text" name="houseNum">
+                                        <span class="error-message"></span>
+                                    </div>
+                                    <div class="form-content-wrap">
+                                        <div class="form-content-wrap_title">
+                                            Dzīvokļa numurs
+                                        </div>
+                                        <input type="text" name="flatNum">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="delivery-left-group">
                             <div class="title-s">Informācija par maksātāju</div>
+                            <div class="tabs">
+                                <nav>
+                                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button"  aria-selected="true">
+                                            Privātpersona
+                                        </button>
+                                        <div class="border"></div>
+                                        <button class="nav-link" id="nav-delivery-tab" data-bs-toggle="tab" data-bs-target="#nav-delivery" type="button"   aria-selected="false">
+                                            Juridiskā persona
+                                        </button>
+                                    </div>
+                                </nav>
+                                <div class="tab-content" id="nav-tabContent">
+                                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                        <div class="register">
+                                            <div class="form-content-wrap">
+                                                <div class="form-content-wrap_title">
+                                                    Jūsu vārds <span class="req">*</span>
+                                                </div>
+                                                <input id="username" type="text" name="username">
+                                                <span class="error-message"></span>
+                                            </div>
+                                            <div class="form-content-wrap">
+                                                <div class="form-content-wrap_title">
+                                                    Jūsu uzvārds <span class="req">*</span>
+                                                </div>
+                                                <input id="surname" type="text" name="surname">
+                                                <span class="error-message"></span>
+                                            </div>
+                                            <div class="form-content-wrap">
+                                                <div class="form-content-wrap_title">
+                                                    Uzņēmuma nosaukums <span class="req">*</span>
+                                                </div>
+                                                <input id="company" type="text" name="company">
+                                                <span class="error-message"></span>
+                                            </div>
+                                            <div class="form-content-wrap">
+                                                <div class="form-content-wrap_title">
+                                                    Reģistrācijas numurs <span class="req">*</span>
+                                                </div>
+                                                <input id="regnum" type="text" name="regnum">
+                                                <span class="error-message"></span>
+                                            </div>
+                                            <div class="form-content-wrap">
+                                                <div class="form-content-wrap_title">
+                                                    PVN reģistrācijas numurs <span class="req">*</span>
+                                                </div>
+                                                <input id="pvn" type="text" name="pvn">
+                                                <span class="error-message"></span>
+                                            </div>
+                                            <div class="form-content-wrap">
+                                                <div class="form-content-wrap_title">
+                                                    Telefona numurs <span class="req">*</span>
+                                                </div>
+                                                <input id="num" type="text" name="num">
+                                                <span class="error-message"></span>
+                                            </div>
+                                            <div class="form-content-wrap">
+                                                <div class="form-content-wrap_title">
+                                                    E-pasta adrese <span class="req">*</span>
+                                                </div>
+                                                <input id="email" type="email" name="email">
+                                                <span class="error-message"></span>
+                                            </div>
+                                            <div class="form-content-wrap">
+                                                <div class="form-content-wrap_title">
+                                                    Jūsu komentārs
+                                                </div>
+                                                <input id="comment" type="email" name="comment">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-delivery" role="tabpanel" aria-labelledby="nav-delivery-tab">
+                                        text2
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="delivery-left-group">
+                            <div class="title-s">Apmaksas veids</div>
+                            <div class="delivery-left-group-radio payment">
+                                <input type="radio" id="cash" name="payment" value="cash" checked>
+                                <label for="cash">
+                                    <svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <title>9547FC83-3BDF-4200-827B-ABCCB95CA3F0</title>
+                                        <g id="Dizains" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="08.04.-Checkout---Saņemt-pakomātā" transform="translate(-881.000000, -1655.000000)" fill="#5CC1DE">
+                                                <g id="Content" transform="translate(215.000000, 200.000000)">
+                                                    <g id="Form" transform="translate(0.000000, 72.000000)">
+                                                        <g id="Content" transform="translate(50.000000, 40.000000)">
+                                                            <g id="Form-3" transform="translate(0.000000, 1274.000000)">
+                                                                <g id="Select-items" transform="translate(0.000000, 50.000000)">
+                                                                    <g id="Content" transform="translate(24.000000, 19.000000)">
+                                                                        <g id="Icon" transform="translate(592.000000, 0.000000)">
+                                                                            <path d="M30,1 L30,13 C30,13.5522847 29.5522847,14 29,14 L7,14 C6.44771525,14 6,13.5522847 6,13 L6,1 C6,0.44771525 6.44771525,0 7,0 L29,0 C29.5522847,0 30,0.44771525 30,1 Z M8.5,10 C8.32479157,10 8.15659927,10.0300396 8.00029246,10.0852495 L8,12 L9.91439849,12.000703 C9.96983268,11.8441149 10,11.6755804 10,11.5 C10,10.6715729 9.32842712,10 8.5,10 Z M24.0354605,1.99988746 L11.9645395,1.99988746 C11.9879085,2.16322479 12,2.33020033 12,2.5 C12,4.43299662 10.4329966,6 8.5,6 C8.33020033,6 8.16322479,5.98790847 7.99988746,5.96453947 L7.99988746,8.03546053 C8.16322479,8.01209153 8.33020033,8 8.5,8 C10.4329966,8 12,9.56700338 12,11.5 C12,11.6701561 11.9878577,11.8374762 11.9643922,12.001141 L24.0356078,12.001141 C24.0121423,11.8374762 24,11.6701561 24,11.5 C24,9.56700338 25.5670034,8 27.5,8 C27.6701561,8 27.8374762,8.01214235 28.001141,8.03560783 L28.001141,5.96439217 C27.8374762,5.98785765 27.6701561,6 27.5,6 C25.5670034,6 24,4.43299662 24,2.5 C24,2.33020033 24.0120915,2.16322479 24.0354605,1.99988746 Z M27.5,10 C26.6715729,10 26,10.6715729 26,11.5 C26,11.6755804 26.0301673,11.8441149 26.0856015,12.000703 L28,12 L28.000703,10.0856015 C27.8441149,10.0301673 27.6755804,10 27.5,10 Z M9.91475048,2.00029246 L8,2 L8.00029246,3.91475048 C8.15659927,3.96996037 8.32479157,4 8.5,4 C9.32842712,4 10,3.32842712 10,2.5 C10,2.32479157 9.96996037,2.15659927 9.91475048,2.00029246 Z M28,2 L26.0852495,2.00029246 C26.0300396,2.15659927 26,2.32479157 26,2.5 C26,3.32842712 26.6715729,4 27.5,4 C27.6755804,4 27.8441149,3.96983268 28.000703,3.91439849 L28,2 Z M0.883378875,16.0067277 L1,16 L8.01637712,16 C8.0454079,16.0006058 8.07442202,16.0023349 8.10333092,16.0053206 L8,16 C8.05076409,16 8.10113022,16.0038599 8.15070601,16.0114171 L8.25090831,16.0319688 L8.32147985,16.0528725 L8.43105916,16.0974132 L8.5045422,16.1366099 L8.55967723,16.1711008 L8.623,16.219 L8.70710678,16.2928932 L13.319,20.904 L20.2395823,19.3668101 C21.5594363,19.0735092 22.8870764,19.7818484 23.3880901,21.0193913 L23.4486833,21.1837722 C23.8708244,22.4501957 23.3837862,23.8334018 22.2818234,24.5601044 L22.1277719,24.6550584 L14.4426787,29.0739869 C12.3935612,30.2522295 9.89456366,30.3139116 7.79628169,29.2532817 L7.54646573,29.1206187 L3.741,27 L1,27 C0.487164161,27 0.0644928393,26.6139598 0.00672773133,26.1166211 L0,26 C0,25.4871642 0.38604019,25.0644928 0.883378875,25.0067277 L1,25 L4,25 C4.12776615,25 4.25394373,25.02448 4.37182911,25.0716985 L4.48670216,25.126432 L8.51987005,27.3734827 C9.98072604,28.1873882 11.7462235,28.2146778 13.2259885,27.4593436 L13.4457365,27.3401743 L21.1308297,22.9212457 C21.5159655,22.6997926 21.6918055,22.2376942 21.5513167,21.8162278 C21.4403655,21.4833741 21.1169954,21.2757365 20.7760569,21.3036375 L20.6734432,21.3191842 L14.3973957,22.7146807 C14.481308,23.4237971 14.2512117,24.1630019 13.7071068,24.7071068 C12.8432923,25.5709213 11.5317618,25.7839656 10.4455212,25.2561122 L10.2759798,25.1665967 L8.00386106,23.8682431 C7.52434362,23.5942332 7.35774689,22.9833785 7.63175686,22.5038611 C7.88619469,22.0585949 8.43107514,21.883143 8.89154556,22.0797379 L8.99613894,22.1317569 L11.2682577,23.4301104 C11.6016733,23.6206336 12.0213559,23.5644305 12.2928932,23.2928932 C12.4344336,23.1513528 12.4521262,22.9328632 12.3459709,22.7720855 L12.2928932,22.7071068 L7.585,18 L1,18 C0.487164161,18 0.0644928393,17.6139598 0.00672773133,17.1166211 L0,17 C0,16.4871642 0.38604019,16.0644928 0.883378875,16.0067277 Z" id="icon"></path>
+                                                                            <path d="M18.3224873,5.98823529 C18.5063492,5.98823529 18.6476662,6.10361347 18.7013942,6.2686608 L18.7189266,6.34224477 L18.7249458,6.42076125 C18.7249458,6.59662272 18.634432,6.75105207 18.473003,6.82036717 L18.3864697,6.84763704 L18.3224873,6.8532872 L16.597,6.853 L16.5954839,6.99428577 L16.598,7.142 L18.3224873,7.14256055 C18.5063492,7.14256055 18.6476662,7.25793873 18.7013942,7.42298606 L18.7189266,7.49657003 L18.7249458,7.57508651 C18.7249458,7.75094798 18.634432,7.90537733 18.473003,7.97469243 L18.3864697,8.0019623 L18.3224873,8.00761246 L16.748,8.007 L16.7652791,8.05827068 C16.9520369,8.5622871 17.2795437,8.87673646 17.6990774,8.96484948 L17.8276497,8.98445652 L17.9501085,8.99031142 C18.4555845,8.99031142 18.8142464,8.79996153 19.0206706,8.37855968 L19.1273524,8.13975405 C19.248047,7.90957814 19.4093886,7.79031142 19.6420824,7.79031142 C19.9762171,7.79031142 20.2,8.03607259 20.2,8.38062284 C20.2,8.51130223 20.1814785,8.63643285 20.1379223,8.75462622 C19.8100533,9.68088098 18.9720287,10.2 17.9501085,10.2 C16.7629399,10.2 15.8727176,9.44655514 15.5368827,8.18814935 L15.493,8.007 L15.1988431,8.00761246 C15.0173485,8.00761246 14.8769034,7.88968325 14.823446,7.72548626 L14.8059954,7.65249233 L14.8,7.57508651 C14.8,7.39739453 14.8896009,7.24364025 15.0501572,7.17497645 L15.136262,7.14801853 L15.1988431,7.14256055 L15.391,7.142 L15.391,6.853 L15.1988431,6.8532872 C15.0173485,6.8532872 14.8769034,6.73535799 14.823446,6.571161 L14.8059954,6.49816707 L14.8,6.42076125 C14.8,6.24306927 14.8896009,6.08931499 15.0501572,6.02065119 L15.136262,5.99369327 L15.1988431,5.98823529 L15.494,5.988 L15.5508782,5.76197479 C15.8622163,4.6681875 16.6055525,3.95790196 17.5909152,3.82330382 L17.7672764,3.80556632 L17.9392625,3.8 C18.9709129,3.8 19.764915,4.35057086 20.1167311,5.28282852 C20.171456,5.41820249 20.2,5.55982555 20.2,5.6899654 C20.2,6.03168216 19.9716623,6.28442907 19.6456978,6.28442907 C19.3738561,6.28442907 19.1920614,6.12746375 19.0649063,5.82391096 C18.8601215,5.29032796 18.4596135,5.00968858 17.9501085,5.00968858 C17.4581214,5.00968858 17.0585723,5.29364503 16.8247897,5.80492615 L16.752,5.988 L18.3224873,5.98823529 Z" id="icon" fill-rule="nonzero"></path>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                    Skaidrā naudā, saņemot preci
+                                </label>
 
+                                <input type="radio" id="internet-bild" name="payment" value="internet-bild">
+                                <label for="internet-bild">
+                                    <svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <title>BBC30BFB-F7AF-4FBE-ABB9-3505E9596917</title>
+                                        <g id="Dizains" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="08.04.-Checkout---Saņemt-pakomātā" transform="translate(-881.000000, -1733.000000)" fill="#5CC1DE" fill-rule="nonzero">
+                                                <g id="Content" transform="translate(215.000000, 200.000000)">
+                                                    <g id="Form" transform="translate(0.000000, 72.000000)">
+                                                        <g id="Content" transform="translate(50.000000, 40.000000)">
+                                                            <g id="Form-3" transform="translate(0.000000, 1274.000000)">
+                                                                <g id="Select-items" transform="translate(0.000000, 50.000000)">
+                                                                    <g id="Block-2" transform="translate(0.000000, 78.000000)">
+                                                                        <g id="Content" transform="translate(24.000000, 19.000000)">
+                                                                            <g id="icon" transform="translate(592.000000, 0.000000)">
+                                                                                <path d="M15,0 C23.2842712,0 30,6.71572875 30,15 C30,16.9099721 29.6430244,18.7365681 28.9921526,20.4167084 C28.3842689,20.1766176 27.7130209,20.0366143 26.9994099,20.0062698 C27.5222911,18.758509 27.8547119,17.4109979 27.962067,16.0005699 L21.9550834,16.000708 C21.6607239,20.2644468 20.0718454,24.3490303 17.3942778,27.7800345 C18.152313,27.6389346 18.8872295,27.4320425 19.5928777,27.1655066 L20.012,26.998 L20.0234852,27.1002444 C20.1211134,27.7860061 20.5159313,28.3679871 21.0726287,28.7192246 C19.2169879,29.5426405 17.161905,30 15,30 C6.71572875,30 0,23.2842712 0,15 C0,6.71572875 6.71572875,0 15,0 Z M26.70282,22 C28.2472885,22 29.3810557,22.6865052 29.890094,23.8103806 C29.9652928,23.9653979 30,24.1204152 30,24.2532872 C30,24.5688581 29.7686189,24.7792388 29.4331164,24.7792388 C29.1381056,24.7792388 28.9530007,24.6352941 28.802603,24.3363322 C28.4150398,23.4948097 27.6341287,23.0795848 26.7201735,23.0795848 C25.6330039,23.0795848 24.7986574,23.6968687 24.4364193,24.7308879 L24.3774403,24.9176471 L27.3159798,24.9176471 C27.5068691,24.9176471 27.6399132,25.0449827 27.6399132,25.2276817 C27.6399132,25.3795353 27.5421665,25.498849 27.3940287,25.5298395 L27.3159798,25.5377163 L24.2559653,25.5377163 C24.2386117,25.6871972 24.2328272,25.8366782 24.2328272,25.9972318 L24.2378886,26.2290657 L24.2559653,26.4567474 L27.3159798,26.4567474 C27.5068691,26.4567474 27.6399132,26.584083 27.6399132,26.766782 C27.6399132,26.9186357 27.5421665,27.0379493 27.3940287,27.0689398 L27.3159798,27.0768166 L24.3716558,27.0768166 C24.6955893,28.23391 25.5574837,28.9204152 26.7201735,28.9204152 C27.6456978,28.9204152 28.4381779,28.6103806 28.8199566,27.7633218 C28.9703543,27.4643599 29.1438901,27.3204152 29.4273319,27.3204152 C29.780188,27.3204152 30,27.5252595 30,27.8408304 C30,27.9626298 29.9826464,28.1065744 29.9190166,28.250519 C29.4157628,29.4352941 28.131598,30 26.7201735,30 C24.8819796,30 23.5372716,28.9835021 23.0992746,27.2767895 L23.0527838,27.0768166 L22.318149,27.0768166 C22.1330441,27.0768166 22,26.9439446 22,26.766782 C22,26.6101829 22.0977467,26.4942589 22.2422418,26.4643336 L22.318149,26.4567474 L22.9602314,26.4567474 C22.9486623,26.3072664 22.9428778,26.1522491 22.9428778,25.9972318 L22.9472162,25.7653979 L22.9602314,25.5377163 L22.318149,25.5377163 C22.1330441,25.5377163 22,25.4048443 22,25.2276817 C22,25.0710826 22.0977467,24.9551585 22.2422418,24.9252333 L22.318149,24.9176471 L23.0527838,24.9176471 C23.4403471,23.1017301 24.8286334,22 26.70282,22 Z M8.04747091,16.0004441 L2.037933,16.0005699 C2.48780608,21.910991 6.88993027,26.7165661 12.6072801,27.7802697 C10.0350853,24.48548 8.46749389,20.583323 8.08619231,16.4753335 L8.04747091,16.0004441 Z M19.9525513,16.0006518 L10.0501965,16.0008328 C10.3533591,19.9711557 11.897752,23.7695376 14.486166,26.9294612 L14.7780539,27.2779128 L15,27.531 L15.2219461,27.2779463 C17.9943009,24.0414864 19.6451344,20.0985282 19.9525513,16.0006518 Z M12.6057222,2.21996554 C6.88500478,3.2885198 2.48707321,8.09264287 2.03785671,14.0004329 L8.04484752,14.0002925 C8.32813199,9.89412178 9.8120236,5.95407301 12.3126828,2.60388398 L12.6057222,2.21996554 Z M15,2.468 L14.7780539,2.72205369 C12.0054735,5.95877707 10.3545968,9.90211372 10.0473737,14.0003489 L19.94988,14.0001688 C19.6469016,10.0294951 18.1024749,6.23075096 15.5138573,3.07056722 L15.2219461,2.72208722 L15,2.468 Z M17.3927199,2.21973029 L17.5356367,2.40323771 C20.1204337,5.78739527 21.65723,9.79495867 21.9525994,14.000557 L27.9621433,14.0004329 C27.5126918,8.08955253 23.1103931,3.28349406 17.3927199,2.21973029 Z" id="Shape"></path>
+                                                                            </g>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                    Ar internetbankas starpniecību
+                                </label>
+
+                                <input type="radio" id="bild" name="payment" value="bild">
+                                <label for="bild">
+                                    <svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <title>C6C27D05-AECE-4868-B5FC-CCE912B7A59C</title>
+                                        <g id="Dizains" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="08.04.-Checkout---Saņemt-pakomātā" transform="translate(-881.000000, -1811.000000)" fill="#5CC1DE" fill-rule="nonzero">
+                                                <g id="Content" transform="translate(215.000000, 200.000000)">
+                                                    <g id="Form" transform="translate(0.000000, 72.000000)">
+                                                        <g id="Content" transform="translate(50.000000, 40.000000)">
+                                                            <g id="Form-3" transform="translate(0.000000, 1274.000000)">
+                                                                <g id="Select-items" transform="translate(0.000000, 50.000000)">
+                                                                    <g id="Block-3" transform="translate(0.000000, 156.000000)">
+                                                                        <g id="Content" transform="translate(24.000000, 19.000000)">
+                                                                            <g id="Icon" transform="translate(592.000000, 0.000000)">
+                                                                                <path d="M18,0 L6.75,0 C4.67485889,0 3,1.70531087 3,3.8 L3,26.2 C3,28.2946891 4.67485889,30 6.75,30 L23.25,30 C25.3251411,30 27,28.2946891 27,26.2 L27,9 C27,8.73478351 26.8946432,8.4804296 26.7071068,8.29289322 L18.7071068,0.292893219 C18.5195704,0.10535684 18.2652165,0 18,0 Z M17.585,2 L25,9.415 L25,26.2 C25,27.1981055 24.212425,28 23.25,28 L6.75,28 C5.78757498,28 5,27.1981055 5,26.2 L5,3.8 C5,2.80189453 5.78757498,2 6.75,2 L17.585,2 Z" id="Path"></path>
+                                                                                <path d="M18,0 C18.5128358,0 18.9355072,0.38604019 18.9932723,0.883378875 L19,1 L19,8 L26,8 C26.5128358,8 26.9355072,8.38604019 26.9932723,8.88337887 L27,9 C27,9.51283584 26.6139598,9.93550716 26.1166211,9.99327227 L26,10 L18,10 C17.4871642,10 17.0644928,9.61395981 17.0067277,9.11662113 L17,9 L17,1 C17,0.44771525 17.4477153,0 18,0 Z" id="Path"></path>
+                                                                                <path d="M8.31814895,21.9044107 L9.0527838,21.9044107 C9.43456255,23.8133044 10.8112798,24.9586406 12.7201735,24.9586406 C14.131598,24.9586406 15.4157628,24.3686189 15.9190166,23.1307303 C15.9826464,22.9803326 16,22.8299349 16,22.7026753 C16,22.3729573 15.780188,22.1589299 15.4273319,22.1589299 C15.1438901,22.1589299 14.9703543,22.3093275 14.8199566,22.621692 C14.4381779,23.5067245 13.6456978,23.830658 12.7201735,23.830658 C11.5574837,23.830658 10.6955893,23.1133767 10.3716558,21.9044107 L13.3159798,21.9044107 C13.5068691,21.9044107 13.6399132,21.7655821 13.6399132,21.5804772 C13.6399132,21.3895879 13.5068691,21.2565437 13.3159798,21.2565437 L10.2559653,21.2565437 C10.2386117,21.1003615 10.2328272,20.9383948 10.2328272,20.7764281 C10.2328272,20.6086768 10.2386117,20.4524946 10.2559653,20.2963124 L13.3159798,20.2963124 C13.5068691,20.2963124 13.6399132,20.1574837 13.6399132,19.9723789 C13.6399132,19.7814895 13.5068691,19.6484454 13.3159798,19.6484454 L10.3774403,19.6484454 C10.7013738,18.4510484 11.5690528,17.7279826 12.7201735,17.7279826 C13.6341287,17.7279826 14.4150398,18.1618221 14.802603,19.0410701 C14.9530007,19.3534346 15.1381056,19.5038322 15.4331164,19.5038322 C15.7686189,19.5038322 16,19.2840202 16,18.9543022 C16,18.8154736 15.9652928,18.6535069 15.890094,18.4915401 C15.3810557,17.3172813 14.2472885,16.6 12.70282,16.6 C10.8286334,16.6 9.44034707,17.7511208 9.0527838,19.6484454 L8.31814895,19.6484454 C8.13304411,19.6484454 8,19.7814895 8,19.9723789 C8,20.1574837 8.13304411,20.2963124 8.31814895,20.2963124 L8.96023138,20.2963124 C8.94866233,20.4524946 8.9428778,20.6144613 8.9428778,20.7764281 C8.9428778,20.9383948 8.94866233,21.1003615 8.96023138,21.2565437 L8.31814895,21.2565437 C8.13304411,21.2565437 8,21.3895879 8,21.5804772 C8,21.7655821 8.13304411,21.9044107 8.31814895,21.9044107 Z" id="Path"></path>
+                                                                            </g>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                    Saņemot priekšapmaksas rēķinu
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-content-bottom">
+                            <label class="checkbox-container">
+                                Es apstiprinu un piekrītu Evi.lv mājas lapas
+                                <a href="#">lietošanas noteikumiem </a>
+                                un datu apstrādes
+                                <a href="#">privātuma politikai</a>.<span class="req">*</span>
+                                <input id="check" type="checkbox">
+                                <span class="checkmark"></span>
+                                <br><span class="error-message"></span>
+                            </label>
                         </div>
                         <button type="submit" class="btn">Noformēt pasūtījumu</button>
                     </form>
@@ -355,7 +645,6 @@
                             <div class="delivery-right-total-item-price"><span>- 4,00</span>€</div>
                         </div>
                     </div>
-
                     <div class="delivery-right-sum">
                         <div class="delivery-right-content-item-left-quant">
                             Kopā apmaksai:
@@ -364,6 +653,29 @@
                             <span>4,00</span>€
                         </div>
                     </div>
+                </div>
+                <div class="delivery-right-link">
+                    <a href="#">
+                        <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <title>BA54A1D5-04F4-4FD4-A5C3-56E20FFAECB4</title>
+                            <g id="Dizains" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="08.02.-Checkout---Uz-vietas-birojā" transform="translate(-1152.000000, -801.000000)" fill="#1E477B">
+                                    <g id="Content" transform="translate(215.000000, 200.000000)">
+                                        <g id="Summary" transform="translate(800.000000, 72.000000)">
+                                            <g id="Edit-cart" transform="translate(0.000000, 511.000000)">
+                                                <g id="Centered" transform="translate(137.000000, 13.000000)">
+                                                    <g id="Icon" transform="translate(0.000000, 5.000000)">
+                                                        <path d="M7.217,2.778 L11.222,6.783 L4.29868916,13.7067113 C4.11089959,13.8945009 3.85620226,14 3.5906277,14 L1.00135013,14 C0.448319722,14 0,13.5516803 0,12.9986499 L0,10.4093723 C0,10.1437977 0.105499085,9.88910041 0.293288661,9.70131084 L7.217,2.778 Z M13.1704544,0.829545605 C14.2765152,1.93560641 14.2765152,3.7288853 13.1704544,4.83494611 L12.283,5.722 L8.278,1.717 L9.16505389,0.829545605 C10.2711147,-0.276515202 12.0643936,-0.276515202 13.1704544,0.829545605 Z" id="icon"></path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        Labot grozu
+                    </a>
                 </div>
             </div>
             </div>
@@ -502,5 +814,6 @@
 <script src="js/swiper.js"></script>
 <script src="js/header.js"></script>
 <script src="js/validation.js"></script>
+<script src="js/form.js"></script>
 </body>
 </html>

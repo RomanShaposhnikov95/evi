@@ -61,7 +61,7 @@ class FormValidator {
             if (re.test(field.value)) {
                 this.setStatus(field, null, "success")
             } else {
-                this.setStatus(field, "Please enter valid email address", "error")
+                this.setStatus(field, "Jūsu ievadītā e-pasta adrese ir norādīta nepareizi", "error")
             }
         }
 
@@ -96,6 +96,23 @@ class FormValidator {
             }
         }
 
+
+        if (field.classList.contains('select')) {
+            const select = document.querySelectorAll('.select');
+
+            select.forEach(el => {
+                if (el.value === "0") {
+                    if(el.id === "location") {
+                        this.setStatus(el, "Izvēlieties uz kurā pakomātā vēlaties saņemt sūtījumu", "error")
+                    } else {
+                        this.setStatus(el, "Izvēlieties", "error")
+                    }
+                } else {
+                    this.setStatus(el, null, "success")
+                }
+            })
+        }
+
     }
 
     setStatus(field, message, status) {
@@ -124,7 +141,26 @@ class FormValidator {
 }
 
 const form = document.querySelector('.form-content')
-const fields = ["username", `email`, "num", "surname", "password", "password_confirmation", "check"]
+const fields = ["username",
+    `email`,
+    "num",
+    "surname",
+    "password",
+    "password_confirmation",
+    "check",
+    "regnum",
+    "company",
+    "pvn",
+    "country-courier",
+    "city-courier",
+    "postId",
+    "address",
+    "houseNum",
+    "country",
+    "town",
+    "location"
+]
 
 const validator = new FormValidator(form, fields)
 validator.initialize()
+

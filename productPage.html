@@ -205,7 +205,38 @@
 <div class="productInfo">
     <div class="container">
         <div class="productInfo_left">
+            <div id="simpleModal" class="modal">
+                <div class="modal-content">
+                    <span class="closeBtn">&times;</span>
+                    <!-- Swiper modal -->
+                    <div id="swiper-container-modal" class="swiper-container-modal">
+                        <div id="swiper-modal" class="swiper-wrapper">
+                            <div class="swiper-slide swiper-slide-modal">
+                                <div class="swiper-zoom-container">
+                                    <img class="swiper-lazy swiper-lazy-modal" data-src="assets/img/product/img-product-1.jpg">
+                                </div>
+                            </div>
+                            <div class="swiper-slide swiper-slide-modal">
+                                <div class="swiper-zoom-container">
+                                    <img class="swiper-lazy swiper-lazy-modal" data-src="assets/img/product/img-product-2.jpg">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add Pagination -->
+                        <div id="swiper-button-next-modal" class="swiper-button-next"></div>
+                        <div id="swiper-button-prev-modal" class="swiper-button-prev"></div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="swiper swiper-container-main">
+                <div id="swiper-slide-block" class="swiper-wrapper"></div>
+            </div>
+
+            <!-- Swiper thumbnails -->
+            <div class="swiper gallery-thumbs">
+                <div id="swiper-thumb" class="swiper-wrapper"></div>
+            </div>
         </div>
         <div class="productInfo_right">
             <div class="productInfo_right_title">
@@ -1215,5 +1246,6 @@
 <script src="js/swiper.js"></script>
 <script src="js/header.js"></script>
 <script src="js/scroll.js"></script>
+<script src="js/gallery.js"></script>
 </body>
 </html>

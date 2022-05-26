@@ -1703,7 +1703,7 @@ input[type=range]:focus::-ms-fill-upper {
   line-height: 22px;
   margin-bottom: 20px;
 }
-.form-content-wrap input {
+.form-content-wrap input, .form-content-wrap select {
   height: 50px;
   margin-top: 8px;
   width: 100%;
@@ -1713,16 +1713,27 @@ input[type=range]:focus::-ms-fill-upper {
   padding: 13px 24px 15px 24px;
   outline: none;
 }
-.form-content-wrap input.input-error {
+.form-content-wrap input.input-error, .form-content-wrap select.input-error {
   border: 1px solid red;
 }
-.form-content-wrap input.input-error:focus {
+.form-content-wrap input.input-error:focus, .form-content-wrap select.input-error:focus {
   border: 1px solid red;
 }
 .form-content-wrap .error-message {
   line-height: 30px;
   color: #CC1433;
   font-size: 13px;
+}
+.form-content-wrap select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-image: url("../assets/img/icons/ic-arrow-down.svg");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 24px) center;
+}
+.form-content-wrap select:invalid {
+  color: #737980;
 }
 .form-content-bottom {
   width: 100%;
@@ -1835,6 +1846,15 @@ input[type=range]:focus::-ms-fill-upper {
   flex-direction: column;
   align-items: center;
 }
+.done-wrap-descr {
+  color: #5C6166;
+  font-size: 14px;
+  letter-spacing: -0.4px;
+  line-height: 22px;
+  text-align: center;
+  max-width: 570px;
+  margin: -15px 0 30px 0;
+}
 .done-wrap .title-s {
   margin: 30px 0;
 }
@@ -1915,8 +1935,99 @@ input[type=range]:focus::-ms-fill-upper {
   background-color: #FFFFFF;
   box-shadow: 0 3px 3px 0 rgba(89, 108, 128, 0.04);
 }
+.delivery-left-group .payment {
+  flex-direction: column;
+  row-gap: 10px;
+}
+.delivery-left-group .payment input:checked + label {
+  color: #1E477B;
+  font-weight: 500;
+}
+.delivery-left-group .payment label {
+  max-height: 68px;
+  width: 100%;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  height: unset;
+  padding: 19px 24px 19px 60px;
+  min-height: unset;
+  text-transform: unset;
+  font-weight: 400;
+}
+.delivery-left-group .payment label:after {
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.delivery-left-group .payment label svg {
+  margin: 0;
+}
+.delivery-left-group .tabs {
+  border: 1px solid #D7DAE0;
+}
+.delivery-left-group .tabs .nav-link {
+  width: calc(50% - 1px);
+  border: none;
+  border-radius: unset;
+  background-color: #F1F2F4;
+  color: #737980;
+  font-size: 14px;
+  letter-spacing: -0.4px;
+  line-height: 22px;
+  text-align: center;
+  padding: 13px 0 15px 0;
+  border-bottom: 1px solid #D7DAE0;
+  transition: none;
+}
+.delivery-left-group .tabs .border {
+  height: 50px;
+  width: 1px;
+  background-color: #D7DAE0;
+}
+.delivery-left-group .tabs .active {
+  background-color: #FFFFFF;
+  color: #1E477B;
+  font-weight: 500;
+  border-bottom: none;
+}
+.delivery-left-group .tabs .tab-content {
+  padding: 30px;
+}
+.delivery-left-group .tabs .register-step .form-content-wrap:nth-child(3) {
+  width: 100%;
+}
+.delivery-left-group-change {
+  margin-top: 30px;
+}
+.delivery-left-group-change-title {
+  margin-bottom: 20px;
+  color: #8A9199;
+  font-size: 18px;
+  letter-spacing: -0.4px;
+  line-height: 30px;
+}
+.delivery-left-group-change-address {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 10px;
+  row-gap: 10px;
+}
+.delivery-left-group-change-address .form-content-wrap:nth-child(-n+3) {
+  width: calc(33.3% - 7px);
+}
+.delivery-left-group-change-address .form-content-wrap:nth-child(4) {
+  width: calc(50% - 7px);
+}
+.delivery-left-group-change-address .form-content-wrap:nth-child(n+5):nth-child(-n+6) {
+  width: calc(25% - 7px);
+}
+.delivery-left .form-content-bottom label {
+  font-size: 14px;
+}
 .delivery-right {
   width: 31.6%;
+  position: relative;
 }
 .delivery-right .form {
   padding: 30px;
@@ -1997,6 +2108,144 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .delivery-right .result-sum {
   font-size: 21px;
+}
+.delivery-right-link {
+  margin-top: 23px;
+}
+.delivery-right-link a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1E477B;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.4px;
+  line-height: 22px;
+}
+.delivery-right-link a svg {
+  margin-right: 8px;
+}
+.delivery-right:before {
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  height: 3px;
+  background-color: #1E477B;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  max-width: 470px;
+  max-height: 470px;
+}
+
+.swiper-container-main {
+  border: 1px solid #D7DAE0;
+  background-color: #FFFFFF;
+  box-shadow: 0 3px 3px 0 rgba(89, 108, 128, 0.04);
+  padding: 10px !important;
+}
+
+.swiper-slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-thumbs .swiper-slide img:hover, .swiper-slide img:hover {
+  cursor: pointer;
+}
+
+/* ............................................... thumbs .......................................................... */
+.gallery-thumbs {
+  height: 100%;
+  max-height: 70px;
+  margin-top: 10px;
+}
+
+.gallery-thumbs .swiper-slide {
+  width: 70px;
+  height: 100%;
+  border: 1px solid #D7DAE0;
+  background-color: #FFFFFF;
+  box-shadow: 0 3px 3px 0 rgba(89, 108, 128, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-thumbs .swiper-slide-thumb-active {
+  border-color: #1E477B;
+}
+
+.gallery-thumbs .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ................................................ modal .......................................................... */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.modal-content {
+  background-color: rgba(41, 44, 51, 0.9);
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  min-width: 300px;
+  animation-name: modalOpen;
+  animation-duration: 1s;
+}
+
+.closeBtn {
+  position: absolute;
+  z-index: 4;
+  color: white;
+  right: 5px;
+  font-size: 30px;
+}
+
+@keyframes modalOpen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* ............................................. modal swiper gallery ....................................................... */
+#swiper-container-modal {
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+}
+
+.swiper-slide-modal {
+  height: 100vh;
+}
+
+.swiper-lazy-modal {
+  object-fit: contain;
+  border: 0;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,4 +1,3 @@
-
 const swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,
     autoplay: {
@@ -18,12 +17,6 @@ const swiperPartners = new Swiper(".mySwiperPartners", {
     loop: true,
     loopFillGroupWithBlank: true,
     speed: 500,
-    // autoplay: {
-    //     enabled: true,
-    //     delay: 1,
-    //     disableOnInteraction: false,
-    //     pauseOnMouseEnter: true,
-    // },
     navigation: {
         nextEl: ".swiper-button-next-l",
         prevEl: ".swiper-button-prev-l",

@@ -6,3 +6,5 @@ const backToTop = () => {
 }
 
 upBtn.addEventListener("click", backToTop);
+
+

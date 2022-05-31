@@ -3,8 +3,13 @@ window.addEventListener('load', () => {
     const swiperSlide = document.getElementById('swiper-slide-block');
     const swiperThumb2 = document.getElementById('swiper-thumb');
 
+    let slideNum = document.getElementById('slide-num');
+    let slideCount = document.getElementById('slide-count');
+
+    slideCount.innerHTML = swiperModal2.length
+
     swiperModal2.forEach((el, index) => {
-        const src = swiperModal2[index].children[0].children[0].getAttribute('data-src')
+        const src = swiperModal2[index].children[0].getAttribute('data-src')
 
         const slide = document.createElement('div')
         let classesToAdd = [ 'swiper-slide', 'minimum-height' ];
@@ -17,12 +22,10 @@ window.addEventListener('load', () => {
         slide.appendChild(slideImg)
         swiperSlide.appendChild(slide)
 
-
         const swiperThumbBtn = document.createElement('div')
         let classesToAddThumb = [ 'swiper-slide', 'swiper-slide-thumbs'];
         swiperThumbBtn.classList.add(...classesToAddThumb)
         swiperThumbBtn.setAttribute("id", `${index}`);
-
 
         const thumbImg = document.createElement('img')
         thumbImg.src = src
@@ -37,7 +40,6 @@ window.addEventListener('load', () => {
         freeMode: true,
         watchSlidesVisibility: true,
         loop: false,
-        allowTouchMove: false,
         autoHeight: false,
         preloadImages: false,
         lazy: true,
@@ -52,6 +54,7 @@ window.addEventListener('load', () => {
         observeParents: true,
         observeChildren: true,
         preloadImages: false,
+        allowTouchMove: false,
         lazy: true,
         lazy: {
             loadPrevNext: true,
@@ -63,15 +66,14 @@ window.addEventListener('load', () => {
         loop: true,
         thumbs: {
             swiper: galleryThumbs
-        }
-
+        },
     });
+
 
     let swiperModal = new Swiper('.swiper-container-modal', {
         observer: true,
         observeParents: true,
         observeChildren: true,
-        spaceBetween: 0,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
@@ -84,9 +86,14 @@ window.addEventListener('load', () => {
         lazy: true,
         lazy: {
             loadPrevNext: true,
+            loadOnTransitionStart: true,
         },
+        on: {
+            slideChange: (swiperModal) => {
+                slideNum.innerHTML = swiperModal.realIndex + 1
+            }
+        }
     });
-
 
     const nonModalGalleryImgContainer = document.querySelector(
         '.swiper-container-main'
@@ -95,10 +102,11 @@ window.addEventListener('load', () => {
     let modal = document.getElementById('simpleModal');
     let modalBtn = document.querySelectorAll('.swiper-slide-img');
     let closeBtn = document.getElementsByClassName('closeBtn')[0];
+    let content = document.getElementById('swiper-container-modal');
+
 
     function openModal() {
-        document.body.style.position = 'fixed';
-        document.body.style.top = `-${window.scrollY}px`;
+        document.body.style.overflow = 'hidden';
 
         let swiperIndexPos = swiper.activeIndex;
         swiperModal.slideTo(swiperIndexPos);
@@ -107,6 +115,12 @@ window.addEventListener('load', () => {
         swiper.keyboard.disable();
         swiperModal.keyboard.enable();
         document.addEventListener('keydown', closeModalWithKeyboard);
+
+        if (swiperIndexPos === 0) {
+            slideNum.innerHTML = swiperModal2.length
+        } else {
+            slideNum.innerHTML = swiperIndexPos
+        }
     }
 
     modalBtn.forEach(element => {
@@ -122,10 +136,7 @@ window.addEventListener('load', () => {
     nonModalGalleryImgContainer.addEventListener('keydown', openModalWithKeyboard);
 
     function closeModal() {
-        const scrollY = document.body.style.top;
-        document.body.style.position = '';
-        document.body.style.top = '';
-        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+        document.body.style.overflow = '';
 
         let swiperModalIndexPos = swiperModal.activeIndex;
         swiper.slideTo(swiperModalIndexPos);
@@ -137,12 +148,19 @@ window.addEventListener('load', () => {
 
     closeBtn.addEventListener('click', closeModal);
 
+    modal.addEventListener( 'click', (e) => {
+        const withinBoundaries = e.composedPath().includes(content);
+
+        if ( ! withinBoundaries ) {
+            closeModal()
+        }
+    })
+
     function closeModalWithKeyboard(event) {
         if (event.key === 'Escape') {
             closeModal();
         }
     }
 })
-
 
 

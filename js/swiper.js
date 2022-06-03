@@ -22,11 +22,15 @@ const swiperPartners = new Swiper(".mySwiperPartners", {
         prevEl: ".swiper-button-prev-l",
     },
     breakpoints: {
-        280: {
+        0: {
             slidesPerView: 1,
         },
-        450: {
+        350: {
             slidesPerView: "auto",
         },
+        500: {
+            slidesPerView: 'auto',
+        },
+
     }
 });

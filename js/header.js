@@ -336,4 +336,21 @@ if (('ontouchstart' in window) || window.DocumentTouch && document instanceof Do
 }
 
 
+///cartEmptyFunction------------------------------------------------------------------------------------------------
+
+const message = document.querySelector('.empty-message');
+const cartContent = document.querySelector('.dd-cart-wrap');
+const cartContentItem = cartContent.querySelectorAll('.delivery-right-content-item');
+
+
+if (cartContentItem && cartContentItem.length) {
+    cartContent.classList.remove('d-none');
+    message.classList.add('d-none');
+} else {
+    cartContent.classList.add('d-none');
+    message.classList.remove('d-none');
+}
+
+
+
 

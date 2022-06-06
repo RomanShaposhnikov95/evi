@@ -1772,6 +1772,51 @@ ul, li {
   margin-left: 30px;
 }
 
+@media (max-width: 1040px) {
+  .notification_right_buy {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .notification_right_buy .btn {
+    margin-top: 3px;
+  }
+}
+@media (max-width: 595px) {
+  .notification_right {
+    flex-direction: column;
+  }
+  .notification_right_buy {
+    flex-direction: row;
+    margin-top: 5px;
+  }
+  .notification_right_buy .btn {
+    margin-top: 0;
+  }
+}
+@media (max-width: 430px) {
+  .notification .container {
+    padding: 0;
+    flex-direction: column;
+  }
+  .notification:before {
+    content: unset;
+  }
+  .notification_left {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .notification_left:before {
+    content: unset;
+  }
+  .notification_right {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px 0 10px;
+  }
+}
 .cardPage {
   width: 100%;
   background-color: #F1F2F4;
@@ -2648,7 +2693,7 @@ select.is-invalid .ss-single-selected, .was-validated select:invalid + .ss-main 
   font-size: 21px;
 }
 .delivery-right-link {
-  margin-top: 23px;
+  margin-top: 10px;
 }
 .delivery-right-link a {
   display: flex;
@@ -2659,9 +2704,19 @@ select.is-invalid .ss-single-selected, .was-validated select:invalid + .ss-main 
   font-weight: 500;
   letter-spacing: -0.4px;
   line-height: 22px;
+  padding: 13px 0 15px 0;
 }
 .delivery-right-link a svg {
   margin-right: 8px;
+}
+.delivery-right-link:hover {
+  background-color: #1E477B;
+}
+.delivery-right-link:hover a {
+  color: #FFFFFF;
+}
+.delivery-right-link:hover a #correct {
+  fill: #FFFFFF;
 }
 .delivery-right:before {
   content: "";
@@ -3229,6 +3284,12 @@ select.is-invalid .ss-single-selected, .was-validated select:invalid + .ss-main 
   line-height: 22px;
   padding: 18px 71px 20px 24px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-bottom-left-dropdown-btn svg {
+  margin-right: 14px;
 }
 .header-bottom-left-dropdown-menu {
   background-color: #FFFFFF;
@@ -3547,6 +3608,12 @@ select.is-invalid .ss-single-selected, .was-validated select:invalid + .ss-main 
     font-size: 0;
     padding: 0;
   }
+  .header-bottom-left-dropdown-btn svg {
+    margin-right: 0;
+  }
+  .header-bottom-left-dropdown-btn svg #menuBtn {
+    fill: #FFFFFF;
+  }
   .header-bottom-left-dropdown-menu {
     position: fixed;
     top: 0;
@@ -3671,7 +3738,7 @@ select.is-invalid .ss-single-selected, .was-validated select:invalid + .ss-main 
   cursor: pointer;
 }
 .ddCart_content {
-  max-height: 240px;
+  max-height: 245px;
   overflow: auto;
 }
 .ddCart_content .delivery-right-content-item {

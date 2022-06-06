@@ -1,93 +1,86 @@
-const menuOpenWrap = document.querySelector('.header_bottom_container_left_wrap');
-const openBtn = document.querySelector('.header_bottom_container_left_wrap_dropbtn');
-const submenuWrap = document.querySelectorAll('.header_bottom_container_left_wrap_dropdown-content-wrap');
-const closeMenuBtn = document.querySelector('.closeMenuBtn');
+const dropDownOpenBtn = document.querySelector('.header-bottom-left-dropdown-btn');
+const dropDownCloseBtn = document.querySelector('.header-bottom-left-dropdown-menu-header-closeBtn');
+const dropDownMenuFirstLevel = document.querySelector('.header-bottom-left-dropdown-menu');
+const dropDownMenuLi = document.querySelectorAll('.header-bottom-left-dropdown-menu-li');
+const dropDownAll = document.querySelector('.header-bottom-left-dropdown');
+const activesMenu = document.getElementsByClassName('submenu-show');
+const searchOpenBtn = document.querySelector('.header-bottom-right-search');
+const body = document.body
+const overlay = document.querySelector('.bottom-overlay')
 
-const overlay = document.querySelector('.overlay');
+const cart = document.querySelector('.ddCart')
+const cartOpenBtn = document.querySelector('.header-bottom-right-cart')
+const cartCloseBtn = document.querySelector('.ddCart_header_close')
 
-const headerTop = document.querySelector('.header_top');
-const headerBottom = document.querySelector('.header_bottom');
+const langOpenBtn = document.querySelector('.header-top-right-item-wrap-descr')
+const langContent = document.querySelector('.languageWrap')
 
-const searchOpenBtn = document.querySelector('.search-wrap-openBtn');
-const searchContent = document.querySelector('.search-wrap-content');
-
+const headerTop = document.querySelector('.header-top');
+const headerBottom = document.querySelector('.header-bottom');
 
 const filterOpenBtn = document.querySelector('.filter-btn');
-const filterCloseBtn = document.querySelector('.filter-close');
 const filterContent = document.getElementById('filter');
+const filterCloseBtn = document.querySelector('.filter-close-btn');
 
-///allTouchFunction ------------------------------------------------------------------------------------------------
 
+for (i = 0; dropDownMenuLi.length > i; i++) {
+    dropDownMenuLi[i].children[0].onclick = function () {
+        let currentActive = activesMenu[0];
+        if (currentActive)
+            currentActive.classList.remove("submenu-show");
 
-if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
-    console.log('this is a touch device');
-
-    searchOpenBtn.addEventListener('click', () => {
-        searchContent.classList.toggle('active-search-wrap');
-        searchOpen()
-        getClass(searchOpenBtn, searchContent, 'searchEl');
-        overlayShow()
-    })
-
-    openBtn.addEventListener('click', () => {
-        menuOpenWrap.classList.toggle('menuBtnActive');
-        menuOpen()
-        getClass(menuOpenWrap, null, 'menuEl');
-        overlayShow()
-    })
-
-    closeMenuBtn.addEventListener('click', () => {
-        menuOpenWrap.classList.remove('menuBtnActive');
-        document.body.classList.remove('overlay-active')
-        menuOpen()
-        overlayShow()
-    })
-
-    submenuWrap.forEach(item => {
-        const link = item.querySelector('.general-title a')
-        link.removeAttribute("href")
-
-        item.addEventListener('click', () =>{
-
-            if(window.innerWidth > 778) {
-                submenuWrap.forEach(el => {
-                    el.classList.remove('link-active');
-                });
-                item.classList.add('link-active')
-            } else {
-                item.classList.toggle('link-active')
-            }
-        })
-    })
-
-} else {
-    console.log('this is not a touch device');
-    document.body.classList.add('no-touch');
-
-    menuOpenWrap.addEventListener("mouseover", function() {
-        overlay.style.display = "block";
-    });
-
-    menuOpenWrap.addEventListener("mouseout", function() {
-        overlay.style.display = "none";
-        headerBottom.style.backgroundColor = 'white';
-    });
-
-    if(window.innerWidth > 778) {
-        window.onscroll = function () {
-            if (document.body.scrollTop > headerTop.offsetHeight || document.documentElement.scrollTop > headerTop.offsetHeight) {
-                menuOpenWrap.addEventListener("mouseover", function() {
-                    headerBottom.style.backgroundColor = '#CDCED0'
-                });
-
-            } else {
-                menuOpenWrap.addEventListener("mouseover", function() {
-                    headerBottom.style.backgroundColor = 'white'
-                });
-            }
-        };
-    }
+        if (currentActive !== (this.parentElement))
+            this.parentElement.classList.add("submenu-show");
+    };
 }
+
+
+window.addEventListener('load', start);
+window.addEventListener('resize', start);
+
+function start(){
+    let c = cartOpenBtn.getBoundingClientRect();
+    cart.style.left = `${(c.left - cart.offsetWidth + cartOpenBtn.offsetWidth) + 'px' }`
+}
+
+
+///withoutElFunction ------------------------------------------------------------------------------------------------
+
+let className = null
+let classNameTwo = null
+let elValue = null
+
+function getClass(classNameNew, classNameTwoNew, elValueNew) {
+    className = classNameNew,
+        classNameTwo = classNameTwoNew,
+        elValue = elValueNew
+    return (
+        className,
+            classNameTwo,
+            elValue
+    )
+}
+
+document.addEventListener( 'click', (e) => {
+    const withinBoundaries = e.composedPath().includes(className);
+    const withinBoundariesTwo = e.composedPath().includes(classNameTwo);
+
+    if (!withinBoundaries && !withinBoundariesTwo) {
+        if (elValue === 'cartEl') {
+            cartOpenBtn.classList.remove('overlay-show')
+        }
+
+        if (elValue === 'langEl') {
+            langOpenBtn.classList.remove('overlay-show')
+        }
+
+        if (elValue === 'searchEl') {
+            searchOpenBtn.classList.remove('overlay-show')
+        }
+
+        overlayShowFunction()
+    }
+})
 
 
 ///allScrollFunction ------------------------------------------------------------------------------------------------
@@ -96,36 +89,76 @@ if(window.innerWidth > 778) {
     window.onscroll = function () {
         if (document.body.scrollTop > headerTop.offsetHeight || document.documentElement.scrollTop > headerTop.offsetHeight) {
             headerBottom.style.position = 'fixed'
-            headerBottom.style.zIndex = '9'
-            overlay.style.zIndex = "8";
             document.body.style.top = `${headerBottom.offsetHeight + 'px'}`
         } else {
-            overlay.style.zIndex = "10";
             headerBottom.style.position = 'relative'
-            headerBottom.style.zIndex = 'unset'
             document.body.style.top = '0'
         }
     };
 }
 
+if(window.innerWidth < 778) {
+    headerTop.classList.add('d-none')
+}
 
-///allLangFunction ------------------------------------------------------------------------------------------------
 
-const langOpen = document.querySelector('.lang-wrap')
-const langContent = document.querySelector('.ddLang')
-const langWrap = document.querySelector('.lang-open')
+const overlayStartBtn = document.querySelectorAll('.overlayStartBtn')
+const activesOverlay = document.getElementsByClassName('overlay-show');
 
-langOpen.addEventListener('click', () => {
-    langContent.classList.toggle("d-none");
-    getClass(langWrap, null, 'langEl');
-})
+for (i = 0; overlayStartBtn.length > i; i++) {
+    overlayStartBtn[i].onclick = function () {
+        let currentActive = activesOverlay[0];
+        if (currentActive)
+            currentActive.classList.remove("overlay-show");
 
-///allCartFunction ------------------------------------------------------------------------------------------------
+        if (currentActive !== this)
+            this.classList.add("overlay-show");
 
-const cart = document.querySelector('.header_bottom_container_cart')
-const cartContent = document.querySelector('.ddCart')
-const svg = cart.querySelector('.svgArrow')
-const closeBtn = document.querySelector('.ddCart_header_close')
+        overlayShowFunction()
+    };
+
+}
+
+
+function overlayShowFunction() {
+    if(window.innerWidth > 778) {
+        if(searchOpenBtn.classList.contains('overlay-show') || cartOpenBtn.classList.contains('overlay-show')) {
+            body.classList.remove('body-active')
+        } else if (dropDownOpenBtn.classList.contains('overlay-show') || filterOpenBtn && filterOpenBtn.classList.contains('overlay-show')) {
+            body.classList.add('body-active')
+        } else {
+            body.classList.remove('body-active')
+        }
+    } else {
+        if(document.querySelector('.overlay-show')) {
+            body.classList.add('body-active')
+        } else {
+            body.classList.remove('body-active')
+        }
+    }
+
+    if(window.innerWidth < 1040 && filterOpenBtn) {
+        filterFunction()
+    }
+
+    if(window.innerWidth < 778) {
+        if(searchOpenBtn.classList.contains('overlay-show') || cartOpenBtn.classList.contains('overlay-show')) {
+            overlay.style.top = '60px'
+            headerTop.style.zIndex = '11'
+        } else {
+            overlay.style.top = '0'
+            headerTop.style.zIndex = '0'
+        }
+        searchFunction()
+    }
+
+    cartFunction()
+    if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
+        menuFunction()
+    }
+    langFunction()
+}
+
 
 const svgIconClear = `
 <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -180,242 +213,127 @@ const svgIconCart = `
 `
 
 
-function searchOpen() {
-    if(searchContent.classList.contains('active-search-wrap')) {
-        searchOpenBtn.innerHTML = svgIconClear
-        searchOpenBtn.style.backgroundColor = '#183862';
-        menuOpenWrap.style.zIndex = '12'
-        cartContent.style.zIndex = '12';
-        cart.style.zIndex = '12';
-        searchContent.style.zIndex = '13'
-        searchOpenBtn.style.zIndex = '13';
+function menuFunction() {
+    if(dropDownOpenBtn.classList.contains('overlay-show')) {
+        dropDownMenuFirstLevel.classList.remove('d-none')
     } else {
-        searchOpenBtn.innerHTML = svgIconSearch;
-        searchOpenBtn.style.backgroundColor = '#1E477B';
-        menuOpenWrap.style.zIndex = '13'
-        cartContent.style.zIndex = '13';
-        cart.style.zIndex = '13';
-        searchOpenBtn.style.zIndex = '13';
-        searchContent.style.zIndex = '13'
+        dropDownMenuFirstLevel.classList.add('d-none')
     }
 }
 
-function cartOpen() {
-    if(window.innerWidth <= 778) {
-        if(cartContent.classList.contains('d-none')) {
-            cart.innerHTML = svgIconCart;
-            cart.style.backgroundColor = '#1E477B';
-            menuOpenWrap.style.zIndex = '13'
-            cartContent.style.zIndex = '13';
-            cart.style.zIndex = '13';
-            searchOpenBtn.style.zIndex = '13';
-            searchContent.style.zIndex = '13'
-        } else {
-            cart.innerHTML = svgIconClear
-            cart.style.backgroundColor = '#183862';
-            menuOpenWrap.style.zIndex = '12'
-            cartContent.style.zIndex = '13';
-            cart.style.zIndex = '13';
-            searchOpenBtn.style.zIndex = '12';
-            searchContent.style.zIndex = '12'
+function cartFunction() {
+    if(cartOpenBtn.classList.contains('overlay-show')) {
+        cart.classList.remove('d-none')
+        start()
+        getClass(cartOpenBtn, cart, 'cartEl')
+
+        if(window.innerWidth < 778) {
+            cartOpenBtn.innerHTML = svgIconClear
+            cartOpenBtn.style.backgroundColor = '#183862'
+        }
+    } else {
+        cart.classList.add('d-none')
+        if(window.innerWidth < 778) {
+            cartOpenBtn.innerHTML = svgIconCart
+            cartOpenBtn.style.backgroundColor = '#1E477B'
         }
     }
 }
 
-function menuOpen() {
-    if(!menuOpenWrap.classList.contains('menuBtnActive')) {
-        menuOpenWrap.style.zIndex = '13'
-        cartContent.style.zIndex = '13';
-        cart.style.zIndex = '13';
-        searchOpenBtn.style.zIndex = '13';
-        searchContent.style.zIndex = '13'
+function langFunction() {
+    if(langOpenBtn.classList.contains('overlay-show')) {
+        langContent.classList.remove('d-none')
+        getClass(langOpenBtn, langContent, 'langEl')
     } else {
-        menuOpenWrap.style.zIndex = '13'
-        cartContent.style.zIndex = '12';
-        cart.style.zIndex = '12';
-        searchOpenBtn.style.zIndex = '11';
-        searchContent.style.zIndex = '12'
+        langContent.classList.add('d-none')
     }
 }
 
-function overlayShow() {
-    if(searchContent.classList.contains('active-search-wrap') ||
-        !cartContent.classList.contains('d-none') ||
-        menuOpenWrap.classList.contains('menuBtnActive') ||
-        filterOpenBtn && filterOpenBtn.classList.contains('active-filter-btn')) {
-        document.body.classList.add('overlay-active')
+function searchFunction() {
+    if(searchOpenBtn.classList.contains('overlay-show')) {
+        headerTop.classList.remove('d-none')
+        if(window.innerWidth < 778) {
+            searchOpenBtn.innerHTML = svgIconClear
+            searchOpenBtn.style.backgroundColor = '#183862'
+        }
+        getClass(searchOpenBtn, headerTop, 'searchEl')
     } else {
-        document.body.classList.remove('overlay-active')
+        headerTop.classList.add('d-none')
+        searchOpenBtn.innerHTML = svgIconSearch
+        searchOpenBtn.style.backgroundColor = '#1E477B'
     }
 }
 
-cart.addEventListener('click', () => {
-    let coord = cart.getBoundingClientRect();
-    cartContent.classList.toggle("d-none")
-    cartOpen()
-    cartContent.style.left = `${(coord.left - cartContent.offsetWidth + cart.offsetWidth ) + 'px' }`
-    svg.classList.toggle("activeSvg");
-    getClass(cartContent, cart, 'cartEl');
-    overlayShow()
-})
-
-closeBtn.addEventListener('click', () => {
-    closeCart()
-    overlayShow()
-})
-
-function closeCart() {
-    cartContent.classList.add('d-none');
-    cartOpen()
-    svg.classList.remove("activeSvg");
+function filterFunction() {
+    if(filterOpenBtn.classList.contains('overlay-show')) {
+        filterContent.style.display = 'block'
+        overlay.style.zIndex = '10'
+    } else {
+        filterContent.style.display = 'none'
+        overlay.style.zIndex = '9'
+    }
 }
 
 
-///cartPositionFunction ------------------------------------------------------------------------------------------------
+overlay.addEventListener('click', () => {
+    overlayStartFunction()
+})
 
-window.addEventListener('resize', start);
+dropDownCloseBtn.addEventListener('click', () => {
+    overlayStartFunction()
+})
 
-function start(){
-    let c = cart.getBoundingClientRect();
-    cartContent.style.left = `${(c.left - cartContent.offsetWidth + cart.offsetWidth) + 'px' }`
+cartCloseBtn.addEventListener('click', () => {
+    overlayStartFunction()
+})
+
+if(filterCloseBtn) {
+    filterCloseBtn.addEventListener('click', () => {
+        overlayStartFunction()
+    })
+}
+
+function overlayStartFunction() {
+    overlayStartBtn.forEach(el => {
+        el.classList.remove('overlay-show')
+        overlayShowFunction()
+    })
 }
 
 
-///cartEmptyFunction------------------------------------------------------------------------------------------------
 
-const message = document.querySelector('.empty-message');
-const cartContentItem = document.querySelector('.dd-cart-wrap');
-
-
-if (!cartContent.querySelectorAll(".delivery-right-content-item").length) {
-    cartContentItem.classList.add('d-none');
-    message.classList.remove('d-none');
+if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
+    console.log('this is a touch device');
 } else {
-    cartContentItem.classList.remove('d-none');
-    message.classList.add('d-none');
-}
+    console.log('this is not a touch device');
 
-///withinBoundariesFunction ------------------------------------------------------------------------------------------------
+    dropDownAll.addEventListener("mouseover", function() {
+        overlay.style.display = "block";
+        dropDownMenuFirstLevel.classList.remove('d-none');
+    });
 
-let className = null
-let classNameTwo = null
-let elValue = null
+    dropDownAll.addEventListener("mouseout", function() {
+        overlay.style.display = "none";
+        dropDownMenuFirstLevel.classList.add('d-none');
+    });
 
-function getClass(classNameNew, classNameTwoNew, elValueNew) {
-    className = classNameNew,
-        classNameTwo = classNameTwoNew,
-        elValue = elValueNew
-    return (
-        className,
-            classNameTwo,
-            elValue
-    )
-}
+    dropDownMenuLi.forEach(el => {
+        const submenu = el.querySelector('.header-bottom-left-dropdown-menu-submenu')
+        const svg = el.querySelector('.header-bottom-left-dropdown-menu-li-wrap svg')
+        const svgArrow = el.querySelector('.header-bottom-left-dropdown-menu-li-wrap svg #arrow-svg')
+        el.addEventListener('mouseover', () => {
+            submenu.style.display = 'block'
+            svg.style.transform = 'rotate(180deg)'
+            svgArrow.style.stroke = '#5CC1DE'
+        })
 
-document.addEventListener( 'click', (e) => {
-    const withinBoundaries = e.composedPath().includes(className);
-    const withinBoundariesTwo = e.composedPath().includes(classNameTwo);
-
-    if (!withinBoundaries && !withinBoundariesTwo) {
-        if (elValue === 'searchEl') {
-            searchContent.classList.remove('active-search-wrap');
-            searchOpen()
-        }
-
-        if(elValue === 'menuEl') {
-            menuOpenWrap.classList.remove('menuBtnActive');
-            menuOpen()
-            submenuWrap.forEach(el => {
-                el.classList.remove('link-active');
-            });
-        }
-
-        if(elValue === 'cartEl') {
-            closeCart()
-        }
-
-        if(elValue === 'langEl') {
-            langContent.classList.add('d-none')
-        }
-
-        overlayShow()
-    }
-})
-
-
-if(window.innerWidth < 778) {
-    const activeBtns = document.querySelectorAll('.active-btn')
-
-    activeBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            activeBtns.forEach(el => {
-                el.classList.remove('active-btn-true');
-            });
-
-            btn.classList.add('active-btn-true');
-
-            if(btn.classList.contains('active-btn-true')) {
-                if (btn.classList.contains('active-btn-menu')) {
-                    searchContent.classList.remove('active-search-wrap');
-                    searchOpen()
-                    closeCart()
-                    menuOpen()
-                }
-                if (btn.classList.contains('active-btn-search')) {
-                    closeCart()
-                    menuOpenWrap.classList.remove('menuBtnActive');
-                    menuOpen()
-                    submenuWrap.forEach(el => {
-                        el.classList.remove('link-active');
-                    });
-                }
-                if (btn.classList.contains('active-btn-cart')) {
-                    menuOpenWrap.classList.remove('menuBtnActive');
-                    menuOpen()
-                    submenuWrap.forEach(el => {
-                        el.classList.remove('link-active');
-                    });
-                    searchContent.classList.remove('active-search-wrap');
-                    searchOpen()
-                }
-            }
+        el.addEventListener('mouseout', () => {
+            submenu.style.display = 'none'
+            svg.style.transform = 'rotate(0)'
+            svgArrow.style.stroke = '#A1AAB3'
         })
     })
 }
 
-
-
-
-if(filterOpenBtn && window.innerWidth < 1045) {
-    filterOpenBtn.addEventListener('click', () => {
-        filterContent.style.display = 'block';
-        filterOpenBtn.classList.add('active-filter-btn')
-        overlay.style.zIndex = '15';
-        document.body.classList.add('overlay-active')
-        overlayShow()
-    })
-
-    filterCloseBtn.addEventListener('click', () => {
-        filterClose()
-    })
-
-    function filterClose() {
-        filterContent.style.display = 'none';
-        overlay.style.zIndex = '9';
-        filterOpenBtn.classList.remove('active-filter-btn')
-        document.body.classList.remove('overlay-active')
-        overlayShow()
-    }
-
-
-    document.addEventListener( 'click', (e) => {
-        const withinBoundaries = e.composedPath().includes(filterOpenBtn);
-        const withinBoundariesTwo = e.composedPath().includes(filterContent);
-
-        if (!withinBoundaries && !withinBoundariesTwo) {
-            filterClose()
-        }
-    })
-}
 
 
